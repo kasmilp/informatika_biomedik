@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Generate the conceptual framework diagram for the literature review."""
+"""Generate the conceptual framework diagram for the literature review.
+
+The layout is checked programmatically: every text block must stay inside its
+panel (or the figure canvas) so the exported PNG remains readable when it is
+scaled to 15.7 cm width inside the DOCX.
+"""
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
@@ -11,41 +16,51 @@ OUT = ROOT / "framework.png"
 
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-fig, ax = plt.subplots(figsize=(9, 11.5), dpi=240)
+FIG_W, FIG_H = 8.2, 10.6
+fig, ax = plt.subplots(figsize=(FIG_W, FIG_H), dpi=300)
 ax.set_xlim(0, 100)
 ax.set_ylim(0, 140)
 ax.axis("off")
 fig.patch.set_facecolor("white")
 
 NAVY = "#0B2545"
-GREY = "#595959"
+GREY = "#565656"
 DARK = "#1F1F1F"
 
+TEXTS = []  # (label, artist, x0, x1, y0, y1) for the fit check
 
-def box(x, y, w, h, face, edge, lw=1.6, radius=0.9, alpha=1.0):
+
+def box(x, y, w, h, face, edge, lw=1.5, radius=0.8):
     p = FancyBboxPatch(
         (x, y), w, h,
-        boxstyle=f"round,pad=0.35,rounding_size={radius}",
-        linewidth=lw, edgecolor=edge, facecolor=face, alpha=alpha,
-        zorder=2,
+        boxstyle=f"round,pad=0.30,rounding_size={radius}",
+        linewidth=lw, edgecolor=edge, facecolor=face, zorder=2,
     )
     ax.add_patch(p)
     return p
 
 
-def layer(x, y, w, h, title, bullets, face, edge, title_color=NAVY):
+def text(label, x, y, s, x0, x1, y0, y1, **kw):
+    artist = ax.text(x, y, s, zorder=3, **kw)
+    TEXTS.append((label, artist, x0, x1, y0, y1))
+    return artist
+
+
+def layer(x, y, w, h, title, bullets, face, edge):
     box(x, y, w, h, face, edge)
-    ax.text(x + w / 2, y + h - 1.4, title, ha="center", va="top",
-            fontsize=14, fontweight="bold", color=title_color, zorder=3)
-    ax.text(x + 1.6, y + h - 5.0, "\n".join("• " + b for b in bullets),
-            ha="left", va="top", fontsize=11.5, color=DARK, linespacing=1.42,
-            zorder=3)
+    text(f"layer:{title}", x + w / 2, y + h - 1.1, title,
+         x, x + w, y, y + h,
+         ha="center", va="top", fontsize=13.2, fontweight="bold", color=NAVY)
+    text(f"bullets:{title}", x + 1.25, y + h - 4.6,
+         "\n".join("• " + b for b in bullets),
+         x, x + w, y, y + h,
+         ha="left", va="top", fontsize=11.4, color=DARK, linespacing=1.45)
 
 
 def down_arrow(x, y1, y2, color="#1F4E79"):
     ax.add_patch(FancyArrowPatch(
         (x, y1), (x, y2),
-        arrowstyle="-|>", mutation_scale=19, linewidth=2.1,
+        arrowstyle="-|>", mutation_scale=18, linewidth=2.0,
         color=color, zorder=4, shrinkA=2, shrinkB=2,
     ))
 
@@ -53,18 +68,24 @@ def down_arrow(x, y1, y2, color="#1F4E79"):
 # ----------------------------------------------------------------------------
 # Title
 # ----------------------------------------------------------------------------
-ax.text(50, 137.4, "Kerangka Interoperabilitas Sosio-Teknis Berlapis (KIST)",
-        ha="center", va="top", fontsize=18, fontweight="bold", color=NAVY)
-ax.text(50, 132.8,
-        "Sintesis 26 artikel (2020–2026) tentang standar, koding, dan implementasi di Indonesia",
-        ha="center", va="top", fontsize=10.5, color=GREY, style="italic")
+text("title", 50, 137.6,
+     "Kerangka Interoperabilitas Sosio-Teknis Berlapis (KIST)",
+     0, 100, 132, 140,
+     ha="center", va="top", fontsize=17, fontweight="bold", color=NAVY)
+text("subtitle", 50, 133.2,
+     "Sintesis 15 artikel (2021–2025) tentang standar, koding, dan implementasi di Indonesia",
+     0, 100, 129, 134,
+     ha="center", va="top", fontsize=10.2, color=GREY, style="italic")
 
 # ----------------------------------------------------------------------------
 # Left context panel
 # ----------------------------------------------------------------------------
-box(1.0, 36, 22.2, 91, "#F7F7F7", "#7F7F7F", lw=1.3)
-ax.text(12.1, 125.2, "KONTEKS INDONESIA", ha="center", va="top",
-        fontsize=10.5, fontweight="bold", color="#404040")
+LX, LW = 1.0, 22.0
+box(LX, 31.0, LW, 96.0, "#F7F7F7", "#7F7F7F", lw=1.2)
+text("panel:left-title", LX + LW / 2, 125.6, "KONTEKS\nINDONESIA",
+     LX, LX + LW, 121.0, 127.0,
+     ha="center", va="top", fontsize=10.5, fontweight="bold",
+     color="#404040", linespacing=1.15)
 context = [
     "Negara kepulauan",
     "Disparitas akses",
@@ -74,17 +95,25 @@ context = [
     "Regulasi & SATUSEHAT",
     "Anggaran terbatas",
 ]
-ax.text(2.4, 120.8, "\n".join("• " + c for c in context),
-        ha="left", va="top", fontsize=9.5, color=DARK, linespacing=1.55)
-ax.text(12.1, 38.4, "Konteks membentuk\nprioritas dan kapasitas adopsi",
-        ha="center", va="bottom", fontsize=8.2, color=GREY, style="italic")
+text("panel:left-body", LX + 1.2, 119.2,
+     "\n".join("• " + c for c in context),
+     LX, LX + LW, 100.0, 120.0,
+     ha="left", va="top", fontsize=9.7, color=DARK, linespacing=1.62)
+text("panel:left-note", LX + LW / 2, 32.2,
+     "Konteks membentuk\nprioritas dan kapasitas adopsi",
+     LX, LX + LW, 31.0, 36.0,
+     ha="center", va="bottom", fontsize=8.4, color=GREY, style="italic",
+     linespacing=1.25)
 
 # ----------------------------------------------------------------------------
 # Right actors panel
 # ----------------------------------------------------------------------------
-box(76.8, 36, 22.2, 91, "#F7F7F7", "#7F7F7F", lw=1.3)
-ax.text(87.9, 125.2, "AKTOR & KEPENTINGAN", ha="center", va="top",
-        fontsize=10.5, fontweight="bold", color="#404040")
+RX, RW = 77.0, 22.0
+box(RX, 31.0, RW, 96.0, "#F7F7F7", "#7F7F7F", lw=1.2)
+text("panel:right-title", RX + RW / 2, 125.6, "AKTOR &\nKEPENTINGAN",
+     RX, RX + RW, 121.0, 127.0,
+     ha="center", va="top", fontsize=10.5, fontweight="bold",
+     color="#404040", linespacing=1.15)
 actors = [
     "Kemenkes & DTO",
     "Fasyankes & lab",
@@ -93,15 +122,20 @@ actors = [
     "Akademisi & asosiasi",
     "Mitra pembangunan",
 ]
-ax.text(78.4, 120.8, "\n".join("• " + a for a in actors),
-        ha="left", va="top", fontsize=9.5, color=DARK, linespacing=1.55)
-ax.text(87.9, 38.4, "Aktor mengoperasikan\nsetiap lapisan kerangka",
-        ha="center", va="bottom", fontsize=8.2, color=GREY, style="italic")
+text("panel:right-body", RX + 1.2, 119.2,
+     "\n".join("• " + a for a in actors),
+     RX, RX + RW, 100.0, 120.0,
+     ha="left", va="top", fontsize=9.7, color=DARK, linespacing=1.62)
+text("panel:right-note", RX + RW / 2, 32.2,
+     "Aktor mengoperasikan\nsetiap lapisan kerangka",
+     RX, RX + RW, 31.0, 36.0,
+     ha="center", va="bottom", fontsize=8.4, color=GREY, style="italic",
+     linespacing=1.25)
 
 # ----------------------------------------------------------------------------
 # Central layers
 # ----------------------------------------------------------------------------
-X, W = 25.0, 50.0
+X, W = 25.6, 48.8
 
 layer(X, 113.5, W, 13.0, "1. INPUT: SISTEM TERFRAGMENTASI",
       ["Rumah sakit, lab, Puskesmas, klinik",
@@ -129,55 +163,83 @@ layer(X, 37.5, W, 13.0, "5. LAPISAN FUNGSIONAL",
       "#FFF2CC", "#BF9000")
 
 layer(X, 18.5, W, 13.0, "6. OUTCOME",
-      ["Kualitas data dan kesinambungan layanan",
+      ["Kualitas data & kesinambungan layanan",
        "Surveilans, riset, dan ekuitas"],
       "#E4DFEC", "#7030A0")
 
-# arrows between layers
-for y1, y2 in [(113.5, 107.7), (94.5, 88.7), (75.5, 69.7), (56.5, 50.7), (37.5, 31.7)]:
+# arrows between layers (bottom of one box -> top of the next)
+for y1, y2 in [(113.5, 107.5), (94.5, 88.5), (75.5, 69.5),
+               (56.5, 50.5), (37.5, 31.5)]:
     down_arrow(50, y1, y2)
 
 # ----------------------------------------------------------------------------
 # Feedback loop
 # ----------------------------------------------------------------------------
-box(25.0, 3.0, 50.0, 10.8, "#D9E2F3", "#1F4E79", lw=1.4)
-ax.text(50, 13.3, "UMPAN BALIK & PEMBELAJARAN",
-        ha="center", va="top", fontsize=11.5, fontweight="bold", color=NAVY)
-ax.text(50, 8.4,
-        "Monitoring & evaluasi  |  audit kualitas data\n"
-        "Evolusi standar  |  capacity building",
-        ha="center", va="center", fontsize=9.5, color=DARK, linespacing=1.3)
+box(X, 4.0, W, 9.8, "#D9E2F3", "#1F4E79", lw=1.3)
+text("feedback:title", 50, 12.7, "UMPAN BALIK & PEMBELAJARAN",
+     X, X + W, 9.5, 13.5,
+     ha="center", va="top", fontsize=11.2, fontweight="bold", color=NAVY)
+text("feedback:body", 50, 8.0,
+     "Monitoring & evaluasi  |  audit kualitas data\n"
+     "Evolusi standar  |  capacity building",
+     X, X + W, 4.0, 10.6,
+     ha="center", va="center", fontsize=9.6, color=DARK, linespacing=1.3)
 
 # outcome -> feedback
-ax.add_patch(FancyArrowPatch(
-    (50, 18.5), (50, 14.0), arrowstyle="-|>", mutation_scale=17,
-    linewidth=1.9, color="#1F4E79", zorder=4, shrinkA=2, shrinkB=2,
-))
+down_arrow(50, 18.5, 13.8)
 
-# feedback -> governance (left side loop)
-ax.plot([23.8, 23.8, 23.8, 25], [8.5, 8.5, 101.0, 101.0],
-        color="#1F4E79", linewidth=1.7, linestyle=(0, (4, 2)), zorder=3)
-ax.annotate("", xy=(25.0, 101.0), xytext=(23.8, 101.0),
+# feedback -> governance (left-side loop, between context panel and stack)
+ax.plot([24.2, 24.2, 24.2, X], [8.2, 8.2, 101.0, 101.0],
+        color="#1F4E79", linewidth=1.6, linestyle=(0, (4, 2)), zorder=3)
+ax.annotate("", xy=(X, 101.0), xytext=(24.2, 101.0),
             arrowprops=dict(arrowstyle="-|>", color="#1F4E79",
-                            lw=1.7, mutation_scale=16), zorder=4)
-ax.text(24.35, 55, "feedback loop", rotation=90, ha="center", va="center",
-        fontsize=7.4, color="#1F4E79", style="italic")
+                            lw=1.6, mutation_scale=15), zorder=4)
+text("feedback:label", 23.9, 8.2, "feedback loop",
+     14.5, 23.9, 6.0, 10.5,
+     ha="right", va="center", fontsize=7.4,
+     color="#1F4E79", style="italic")
 
 # ----------------------------------------------------------------------------
 # Legend / note
 # ----------------------------------------------------------------------------
-ax.text(50, 0.8,
-        "Catatan: lapisan 2 bersifat lintas-sektoral;\n"
-        "lapisan 3–5 berjalan bersama, bukan berurutan secara kaku.",
-        ha="center", va="bottom", fontsize=8.2, color=GREY, style="italic",
-        linespacing=1.3)
+text("note", 50, 0.2,
+     "Catatan: lapisan 2 bersifat lintas-sektoral;\n"
+     "lapisan 3–5 berjalan bersama, bukan berurutan secara kaku.",
+     0, 100, 0.0, 3.8,
+     ha="center", va="bottom", fontsize=8.4, color=GREY, style="italic",
+     linespacing=1.25)
 
-# thin bracket between context/actors and central stack
-for y in (36, 127):
-    ax.plot([23.2, 25.0], [y, y], color="#BFBFBF", lw=0.9, zorder=1)
-    ax.plot([75.0, 76.8], [y, y], color="#BFBFBF", lw=0.9, zorder=1)
+# thin connectors between side panels and the central stack
+for y in (31.0, 127.0):
+    ax.plot([LX + LW, X], [y, y], color="#BFBFBF", lw=0.8, zorder=1)
+    ax.plot([X + W, RX], [y, y], color="#BFBFBF", lw=0.8, zorder=1)
 
-fig.subplots_adjust(left=0.01, right=0.99, top=0.995, bottom=0.005)
-fig.savefig(OUT, dpi=240, bbox_inches="tight", facecolor="white")
+fig.subplots_adjust(left=0.005, right=0.995, top=0.995, bottom=0.005)
+fig.savefig(OUT, dpi=300, bbox_inches="tight", pad_inches=0.08,
+            facecolor="white")
+
+# ----------------------------------------------------------------------------
+# Fit check (data coordinates)
+# ----------------------------------------------------------------------------
+fig.canvas.draw()
+renderer = fig.canvas.get_renderer()
+to_data = ax.transData.inverted()
+problems = []
+for label, artist, x0, x1, y0, y1 in TEXTS:
+    bb = artist.get_window_extent(renderer)
+    (xa, ya), (xb, yb) = to_data.transform([[bb.x0, bb.y0], [bb.x1, bb.y1]])
+    # small tolerance because glyph bboxes include padding
+    if xa < x0 - 0.35 or xb > x1 + 0.35 or ya < y0 - 0.35 or yb > y1 + 0.35:
+        problems.append(
+            f"{label}: bbox=({xa:.1f},{ya:.1f})-({xb:.1f},{yb:.1f}) "
+            f"limits=({x0:.1f},{y0:.1f})-({x1:.1f},{y1:.1f})"
+        )
+
 plt.close(fig)
-print("Saved", OUT, OUT.stat().st_size)
+print(f"Saved {OUT} ({OUT.stat().st_size} bytes)")
+if problems:
+    print("WARNING: text outside its allowed area:")
+    for p in problems:
+        print(" -", p)
+    raise SystemExit(1)
+print("Layout check: OK")

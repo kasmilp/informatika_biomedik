@@ -166,10 +166,13 @@ def shade(cell, fill):
 
 def mark_header_row(row):
     trPr = row._tr.get_or_add_trPr()
-    if trPr.find(qn("w:tblHeader")) is None:
+    el = trPr.find(qn("w:tblHeader"))
+    if el is None:
         el = OxmlElement("w:tblHeader")
-        el.set(qn("w:val"), "true")
         trPr.append(el)
+    # Word repeats the header only for the canonical "true" value; "on" is
+    # accepted by the schema but is not honoured by every Word version.
+    el.set(qn("w:val"), "true")
 
 
 def no_split(row):
@@ -203,6 +206,11 @@ def fmt_table(table, fractions, content_cm, font_size, header_fill="D9E2F3"):
                 pf.space_before = Pt(0)
                 pf.space_after = Pt(0)
                 pf.line_spacing = 1.0
+                # Compact inherits Body Text's first-line indent, which would
+                # shrink the usable width of narrow table cells.
+                pf.first_line_indent = Cm(0)
+                pf.left_indent = Cm(0)
+                pf.right_indent = Cm(0)
                 pf.alignment = (
                     WD_ALIGN_PARAGRAPH.CENTER
                     if r_idx == 0
@@ -434,8 +442,14 @@ if prev is not None and prev.tag == qn("w:p"):
 else:
     raise RuntimeError("Could not find paragraph before 3.6")
 
-# Find the matrix table: 27 rows, 6 cols
-matrix = next(t for t in doc.tables if len(t.rows) == 27 and len(t.columns) == 6)
+# Find the synthesis matrix by its header and six columns. Its row count
+# changes whenever the paper is trimmed, so it must not be hard-coded.
+matrix = next(
+    t for t in doc.tables
+    if len(t.columns) == 6
+    and len(t.rows) > 1
+    and t.cell(0, 0).text.strip().lower() == "no"
+)
 
 land_sect = sect_copy(sec)
 set_page(land_sect, landscape=True, margin_cm=2.0)
@@ -456,7 +470,7 @@ for shape in doc.inline_shapes:
 # --------------------------------------------------------------- tables
 fmt_table(doc.tables[0], [0.20, 0.80], 16.0, 8.5)
 fmt_table(doc.tables[1], [0.22, 0.08, 0.12, 0.28, 0.30], 16.0, 8.5)
-fmt_table(doc.tables[2], [0.04, 0.13, 0.14, 0.09, 0.31, 0.29], 25.7, 7.5)
+fmt_table(doc.tables[2], [0.05, 0.13, 0.14, 0.09, 0.31, 0.28], 25.7, 7.5)
 fmt_table(doc.tables[3], [0.16, 0.14, 0.34, 0.36], 16.0, 8.5)
 fmt_table(doc.tables[4], [0.16, 0.33, 0.25, 0.26], 16.0, 8.5)
 fmt_table(doc.tables[5], [0.14, 0.22, 0.64], 16.0, 8.5)
