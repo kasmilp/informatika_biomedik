@@ -1,0 +1,2175 @@
+====================================================================================================
+FILE: A01_Torab-Miandoab_2023_Interoperability_HIS_SLR.pdf
+====================================================================================================
+Torab‑Miandoab et al. 
+BMC Medical Informatics and Decision Making (2023) 23:18 
+https://doi.org/10.1186/s12911-023-02115-5
+RESEARCH
+© The Author(s) 2023. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Open Access
+BMC Medical Informatics and
+Decision Making
+Interoperability of heterogeneous health 
+information systems: a systematic literature 
+review
+Amir Torab‑Miandoab1, Taha Samad‑Soltani1, Ahmadreza Jodati2 and Peyman Rezaei‑Hachesu1* 
+Abstract 
+Background  The lack of interoperability between health information systems reduces the quality of care provided 
+to patients and wastes resources. Accordingly, there is an urgent need to develop integration mechanisms among 
+the various health information systems. The aim of this review was to investigate the interoperability requirements for 
+heterogeneous health information systems and to summarize and present them.
+Methods  In accordance with the PRISMA guideline, a broad electronic search of all literature was conducted on the 
+topic through six databases, including PubMed, Web of science, Scopus, MEDLINE, Cochrane Library and Embase to 
+25 July 2022. The inclusion criteria were to select English-written articles available in full text with the closest objec‑
+tives. 36 articles were selected for further analysis.
+Results  Interoperability has been raised in the field of health information systems from 2003 and now it is one of the 
+topics of interest to researchers. The projects done in this field are mostly in the national scope and to achieve the 
+electronic health record. HL7 FHIR, CDA, HIPAA and SNOMED-CT, SOA, RIM, XML, API, JAVA and SQL are among the 
+most important requirements for implementing interoperability. In order to guarantee the concept of data exchange, 
+semantic interaction is the best choice because the systems can recognize and process semantically similar informa‑
+tion homogeneously.
+Conclusions  The health industry has become more complex and has new needs. Interoperability meets this needs 
+by communicating between the output and input of processor systems and making easier to access the data in the 
+required formats.
+Keywords  Electronic health record, Health information systems, Heterogeneous, Interoperability, Requirements
+Background
+Every society requires quality and reliable healthcare, 
+which is employed as a structural part of daily life. 
+Because of new diagnostic and therapeutic ways and 
+means, new procedures, and the existence of multiple 
+professional groups, each with its own set of characteris-
+tics, requirements, and working methods, the healthcare 
+field is exceedingly complicated [1]. As a result, the use 
+of health information technologies is required to ensure 
+the long-term stability of the healthcare system. In this 
+regard,  various health information technologies have 
+*Correspondence:
+Peyman Rezaei‑Hachesu
+rezaeip@tbzmed.ac.ir
+1 Department of Health Information Technology, Faculty of Management 
+and Medical Informatics, Tabriz University of Medical Sciences, Golghast 
+St., Tabriz 5166614711, Iran
+2 Cardiovascular Research Center, Tabriz University of Medical Sciences, 
+Tabriz, Iran
+Page 2 of 13
+Torab‑Miandoab et al. BMC Medical Informatics and Decision Making (2023) 23:18 
+been developed for the translation of paper-based health 
+information into electronic health information through-
+out the last few decades, and many hospitals around the 
+world have implemented health information systems [2].
+A health information system is broadly defined as a 
+system that integrates data collection, processing, report-
+ing, and use of the information necessary for improving 
+health service effectiveness and efficiency through better 
+management at all levels of health services [3, 4]. These 
+systems, contribute to a better coordination of care, bet-
+ter organization of information, timeliness, accuracy and 
+completeness of information, the ability to analyze infor-
+mation, reduce medical errors, reduce cost
+
+====================================================================================================
+FILE: A02_Holmgren_2023_HIE_Policy_Landscape.pdf
+====================================================================================================
+184
+IMIA Yearbook of Medical Informatics 2023
+© 2023 IMIA and Georg Thieme Verlag KG
+Health Information Exchange: 
+Understanding the Policy Landscape and 
+Future of Data Interoperability
+A Jay Holmgren1, Moritz Esdar2, Jens Hüsers2, João Coutinho-Almeida3
+1 University of California, San Francisco, USA
+2 University of Applied Sciences Osnabrueck, Germany
+3 Porto University, Portugal
+Summary
+Objectives: To review recent literature on health information 
+exchange (HIE), focusing on the policy approach of five case 
+study nations: the United States of America, the United Kingdom, 
+Germany, Israel, and Portugal, as well as synthesize lessons 
+learned across countries and provide recommendations for future 
+research.
+Methods: A narrative review of each nation’s HIE policy frame­
+works, current state, and future HIE strategy.
+Results: Key themes that emerged include the importance of both 
+central decision-making as well as local innovation, the multiple 
+and complex challenges of broad HIE adoption, and the varying 
+role of HIE across different national health system structures.
+Conclusion: HIE is an increasingly important capability and 
+policy priority as electronic health record (EHR) adoption becomes 
+more common and care delivery is increasingly digitized. While 
+all five case study nations have adopted some level of HIE, there 
+are significant differences across their level of data sharing in­
+frastructure and maturity, and each nation took a different policy 
+approach. While identifying generalizable strategies across dispa­
+rate international systems is challenging, there are several com­
+mon themes across successful HIE policy frameworks, such as the 
+importance of central government prioritization of data sharing. 
+Finally, we make several recommendations for future research to 
+expand the breadth and depth of the literature on HIE and guide 
+future decision-making by policymakers and practitioners.
+Keywords
+Health Information Exchange, interoperability, data sharing, 
+health information technology, electronic health records
+Yearb Med Inform 2023:184-94
+http://dx.doi.org/10.1055/s-0043-1768719
+1 Introduction
+As health care has modernized in the 21st 
+century, moving away from paper-based re­
+cord keeping to digital workflows following 
+the broad adoption of electronic health re­
+cords (EHRs), health information exchange 
+(HIE) and data interoperability – the process 
+of electronically sharing data across unaffil­
+iated organizations including care delivery 
+providers, payers, public health agencies, 
+and more - have become increasingly cru­
+cial components of a modern health system 
+[1, 2]. Not only is widespread HIE critical 
+to providing clinicians with a full picture of 
+patient health status at the point of care to 
+ensure quality and safety, robust interoper­
+ability could also slow medical cost growth 
+through a reduction in duplicative utiliza­
+tion [3], and may reduce administrative bur­
+den on patients by letting their data follow 
+them seamlessly across the continuum of 
+care [4]. Further, the COVID-19 pandemic 
+has illustrated the importance of readi­
+ly-available patient and population-level 
+health data aggregated across care delivery 
+organizations – one of several critical HIE 
+use cases [5]. Building a robust interopera­
+ble health system is therefore an important 
+policy goal, and is essential to realizing the 
+value of the significant investment made in 
+digitizing health care delivery over the past 
+several decades.
+HIE appears simple in concept – the 
+idea that all health data should be readily 
+available to the patient and clinicians at the 
+point of care, regardless of where that data 
+was generated. However, the implementation 
+of large-scale, robust HIE infrastructure and 
+capabilities has proven difficult in health 
+systems across the world [6, 7]. Building 
+connectivity between unaffiliated health 
+care organizations presents a wide array of 
+challenges, ranging from technical issues 
+around data standards, governance problems 
+with what data is shared and who owns it, 
+privacy and security concerns for both 
+patients and organizations, costs of tech­
+nology and implementation, competitive 
+disincentives to allow data to flow easily to 
+other organizations, and workflow questions 
+on how to best present busy clinicians with 
+actionable knowledge without burdening 
+them with irrelevant information. These 
+challenges are situated within the broader 
+policy framework of each nation, both their 
+specific approach to HIE as well as how they 
+organize care delivery in general. For ex­
+ample, in some nations HIE faces financial 
+disincentives as health care organizations 
+are reluctant to share patient data that they 
+see as a key strategic asset in a competi­
+tive market [8, 9]. Additionally, while the 
+theoretical benefits of HIE are obvious, 
+demonstrating value to patients, clinicians, 
+and health systems at scale has been more 
+difficult. There remain critical unanswered 
+questio
+
+====================================================================================================
+FILE: A03_Mamuye_2022_HIE_Policy_Standards_Africa.pdf
+====================================================================================================
+RESEARCH ARTICLE
+Health information exchange policy and
+standards for digital health systems in africa:
+A systematic review
+Adane L. Mamuye1‡, Tesfahun M. Yilma2‡, Ahmad AbdulwahabID3, Sean BroomheadID3,
+Phumzule Zondo3, Mercy Kyeng4, Justin Maeda4, Mohammed Abdulaziz4,
+Tadesse Wuhib5, Binyam C. TilahunID2*
+1 Department of Computer Science, College of Informatics, University of Gondar, Gondar, Ethiopia,
+2 Department of Health Informatics, College of Medicine and Health Sciences, University of Gondar, Gondar,
+Ethiopia, 3 Health Information Systems Program–SA, Pretoria, South Africa, 4 Africa Centers for Disease
+Control and Prevention, African Union Commission, Addis Ababa, Ethiopia, 5 Centers for Disease Control
+and Prevention, National Center for Public Health Informatics, Atlanta, Georgia, United States of America
+‡ These authors share first authorship on this work.
+* binigcms@gmail.com
+Abstract
+Lack of interoperability and integration between heterogeneous health systems is a big chal-
+lenge to realize the potential benefits of eHealth. To best move from siloed applications to
+interoperable eHealth solutions, health information exchange (HIE) policy and standards
+are necessary to be established. However, there is no comprehensive evidence on the cur-
+rent status of HIE policy and standards on the African continent. Therefore, this paper
+aimed to systematically review the status of HIE policy and standards which are currently in
+practice in Africa. A systematic search of the literature was conducted from Medical Litera-
+ture Analysis and Retrieval System Online (MEDLINE), Scopus, Web of Science, and
+Excerpta Medica Database (EMBASE), and a total of 32 papers (21 strategic documents
+and 11 peer-reviewed papers) were selected based on predefined criteria for synthesis.
+Results revealed that African countries have paid attention to the development, improve-
+ment, adoption, and implementation of HIE architecture for interoperability and standards.
+Synthetic and semantic interoperability standards were identified for the implementation of
+HIE in Africa. Based on this comprehensive review, we recommend that comprehensive
+interoperable technical standards should be set at each national level and should be guided
+by appropriate governance and legal frameworks, data ownership and use agreements, and
+health data privacy and security guidelines. On top of the policy issues, there is a need to
+identify a set of standards (health system standards, communication, messaging standards,
+terminology/vocabulary standards, patient profile standards, privacy and security, and risk
+assessment) and implement them throughout all levels of the health system. On top of this,
+we recommend that the Africa Union (AU) and regional bodies provide the necessary
+human resource and high-level technical support to African countries to implement HIE pol-
+icy and standards. To realize the full potential of eHealth in the continent, it is recommended
+that African countries need to have a common HIE policy, interoperable technical standards,
+and health data privacy and security guidelines. Currently, there is an ongoing effort by the
+PLOS DIGITAL HEALTH
+PLOS Digital Health | https://doi.org/10.1371/journal.pdig.0000118
+October 10, 2022
+1 / 18
+a1111111111
+a1111111111
+a1111111111
+a1111111111
+a1111111111
+OPEN ACCESS
+Citation: Mamuye AL, Yilma TM, Abdulwahab A,
+Broomhead S, Zondo P, Kyeng M, et al. (2022)
+Health information exchange policy and standards
+for digital health systems in africa: A systematic
+review. PLOS Digit Health 1(10): e0000118. https://
+doi.org/10.1371/journal.pdig.0000118
+Editor: Rutwik Shah, UCSF: University of California
+San Francisco, UNITED STATES
+Received: March 3, 2022
+Accepted: August 31, 2022
+Published: October 10, 2022
+Copyright: © 2022 Mamuye et al. This is an open
+access article distributed under the terms of the
+Creative Commons Attribution License, which
+permits unrestricted use, distribution, and
+reproduction in any medium, provided the original
+author and source are credited.
+Data Availability Statement: All relevant data are
+within the manuscript and its Supporting
+Information files.
+Funding: This review article is prepared with the
+financial support of Africa CDC with a grant
+number of HIE4609372. BT has received the fund
+from Africa CDC. The funders had no role in the
+study design, data collection and analysis, decision
+to publish, or preparation of the manuscript.
+Competing interests: The authors have declared
+that no competing interests exist.
+Africa Centres for Disease Control and Prevention (Africa CDC) towards promoting HIE on
+the continent. A task force has been established from Africa CDC, Health Information Ser-
+vice Provider (HISP) partners, and African and global HIE subject matter experts to provide
+expertise and guidance in the development of AU policy and standards for HIE. Although
+the work is still ongoing, the African Union shall continue to support the implementation of
+HIE policy and standards 
+
+====================================================================================================
+FILE: A04_Nsaghurwe_2021_Tanzania_National_HIE.pdf
+====================================================================================================
+Nsaghurwe et al. BMC Med Inform Decis Mak (2021) 21:139 
+https://doi.org/10.1186/s12911-021-01499-6
+TECHNICAL ADVANCE
+One country’s journey to interoperability: 
+Tanzania’s experience developing 
+and implementing a national health information 
+exchange
+Alpha Nsaghurwe1, Vikas Dwivedi2*  , Walter Ndesanjo3, Haji Bamsi3, Moses Busiga4, Edwin Nyella1, 
+Japhet Victor Massawe1, Dasha Smith2, Kate Onyejekwe2, Jonathan Metzger5 and Patricia Taylor2 
+Abstract 
+Background:  Robust, flexible, and integrated health information (HIS) systems are essential to achieving national and 
+international goals in health and development. Such systems are still uncommon in most low and middle income 
+countries. This article describes a first-phase activity in Tanzania to integrate the country’s vertical health management 
+information system with the help of an interoperability layer that enables cross-program data exchange.
+Methods:  From 2014 to 2019, the Tanzanian government and partners implemented a five-step procedure based 
+on the “Mind the GAPS” (governance, architecture, program management, and standards) framework and using both 
+proprietary and open-source tools. In collaboration with multiple stakeholders, the team developed the system to 
+address major data challenges via four fully documented “use case scenarios” addressing data exchange among hospi-
+tals, between services and the supply chain, across digital data systems, and within the supply chain reporting system. 
+This work included developing the architecture for health system data exchange, putting a middleware interoperabil-
+ity layer in place to facilitate the exchange, and training to support use of the system and the data it generates.
+Results:  Tanzania successfully completed the five-step procedure for all four use cases. Data exchange is currently 
+enabled among 15 separate information systems, and has resulted in improved data availability and significant time 
+savings. The government has adopted the health information exchange within the national strategy for health care 
+information, and the system is being operated and managed by Tanzanian officials.
+Conclusion:  Developing an integrated HIS requires a significant time investment; but ultimately benefit both pro-
+grams and patients. Tanzania’s experience may interest countries that are developing their HIS programs.
+Keywords:  Health, Interoperability, Standards, Architecture, Governance
+© The Author(s) 2021. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Background
+Achieving the Sustainable Development Goals (SDGs) 
+espoused by the United Nations General Assembly 
+will require stronger, well-financed and better-staffed 
+health systems, with foundational elements that include 
+dynamic health information systems (HIS) to monitor 
+progress in the sector. Tanzania’s Health Sector Strate-
+gic Plan points to the need for a stronger HIS, one that 
+supports data exchange and interoperability—defined as 
+the capacity within the system to share and use data from 
+two or more systems to improve its use at all levels of the 
+Open Access
+*Correspondence: vikasdw@gmail.com
+2 USAID’s Maternal and Child Survival Program/John Snow Inc., Arlington, 
+USA
+Full list of author information is available at the end of the article
+Page 2 of 16
+Nsaghurwe et al. BMC Med Inform Decis Mak (2021) 21:139 
+health system [1, 2]. These improvements align with the 
+World Health Organization’s (WHO) framing of HIS as 
+a fundamental health system building block and promo-
+tion of reliable, timely data to inform policy, program and 
+individual decision-making, and guide the efficient distri-
+bution of resources [3–5].
+Optimally, a health information system includes data 
+about the health workforce, financial systems, client vis-
+its, commodities, disease surveillance, vital registration 
+data, and other health-related information at facility and 
+community levels to facilitate planning, identify gaps, 
+support decisio
+
+====================================================================================================
+FILE: A05_Walker_2023_Interoperability_Stakeholder_Ohio.pdf
+====================================================================================================
+Original Paper
+Perspectives on Challenges and Opportunities for Interoperability:
+Findings From Key Informant Interviews With Stakeholders in
+Ohio
+Daniel M Walker1,2, MPH, PhD; Willi L Tarver2,3, MLiS, DrPH; Pallavi Jonnalagadda2, MBBS, DrPH; Lorin Ranbom4,
+BA; Eric W Ford5, MPH, PhD; Saurabh Rahurkar2,6, BDS, DrPH
+1Department of Family and Community Medicine, College of Medicine, The Ohio State University, Columbus, OH, United States
+2The Center for the Advancement of Team Science, Analytics, and Systems Thinking, College of Medicine, The Ohio State University, Columbus,
+OH, United States
+3Department of Internal Medicine, College of Medicine, The Ohio State University, Columbus, OH, United States
+4Government Resource Center, College of Medicine, The Ohio State University, Columbus, OH, United States
+5Department of Healthcare Organization and Policy, School of Public Health, University of Alabama, Birmingham, AL, United States
+6Department of Biomedical Informatics, College of Medicine, The Ohio State University, Columbus, OH, United States
+Corresponding Author:
+Daniel M Walker, MPH, PhD
+Department of Family and Community Medicine
+College of Medicine
+The Ohio State University
+Suite 5000
+700 Ackerman Rd
+Columbus, OH, 43202
+United States
+Phone: 1 203 988 1800
+Email: daniel.walker@osumc.edu
+Abstract
+Background: Interoperability—the exchange and integration of data across the health care system—remains a challenge despite
+ongoing policy efforts aimed at promoting interoperability.
+Objective: This study aimed to identify current challenges and opportunities to advancing interoperability across stakeholders.
+Methods: Primary data were collected through qualitative, semistructured interviews with stakeholders (n=24) in Ohio from
+July to October 2021. Interviewees were sampled using a stratified purposive sample of key informants from 4 representative
+groups as follows: acute care and children’s hospital leaders, primary care providers, behavioral health providers, and regional
+health information exchange networks. Interviews focused on key informant perspectives on electronic health record implementation,
+the alignment of public policy with organizational strategy, interoperability implementation challenges, and opportunities for
+health information technology. The interviews were transcribed verbatim followed by rigorous qualitative analysis using directed
+content analysis.
+Results: The findings illuminate themes related to challenges and opportunities for interoperability that align with technological
+(ie, implementation challenges, mismatches in interoperability capabilities across stakeholders, and opportunities to leverage new
+technology and integrate social determinants of health data), organizational (ie, facilitators of interoperability and strategic
+alignment of participation in value-based payment programs with interoperability), and environmental (ie, policy) domains.
+Conclusions: 
+Interoperability, although technically feasible for most providers, remains challenging for technological,
+organizational, and environmental reasons. Our findings suggest that the incorporation of end user considerations into health
+information technology development, implementation, policy, and standard deployment may support interoperability advancement.
+(JMIR Med Inform 2023;11:e43848) doi: 10.2196/43848
+KEYWORDS
+interoperability; health information exchange; health information technology; electronic health record; usability
+JMIR Med Inform 2023 | vol. 11 | e43848 | p. 1
+https://medinform.jmir.org/2023/1/e43848
+(page number not for citation purposes)
+Walker et al
+JMIR MEDICAL INFORMATICS
+XSL•FO
+RenderX
+Introduction
+Background
+Starting with the Health Information Technology for Economic
+and Clinical Health (HITECH) Act in 2009, the United States
+has 
+invested 
+over 
+US$ 
+36 
+billion 
+to 
+promote
+interoperability—the ability of 2 or more systems to exchange
+and use information [1-3]—through health information exchange
+(HIE) networks and electronic health records (EHRs). HITECH
+promoted the adoption and implementation of certified EHRs
+by providing financial incentives through its “meaningful use”
+programs and funded grants that helped establish regional HIE
+networks [4]. Some of these financial incentive programs, such
+as the state Medicaid Provider Incentive Program (MPIP) were
+phased out in 2021. However, subsequent legislation such as
+the Patient Protection and Affordable Care Act reinforced this
+financing by advancing payment and care delivery models that
+use risk-based contracts to incentivize quality of care and patient
+outcomes, such as accountable care organizations, value-based
+care [5], and patient-centered medical homes [6], which stand
+to benefit from enhanced electronic data exchange. Other
+population health policy programs, including Comprehensive
+Primary Care (CPC) [7], CPC-Plus [8], and Primary Care First
+[9], further rely on robust data exchange among regional
+providers. Ongoing federal policy development has 
+
+====================================================================================================
+FILE: A06_Schmidt_2020_Data_Harmonisation_Scoping_Review.pdf
+====================================================================================================
+RESEARCH ARTICLE
+Open Access
+Definitions, components and processes of
+data harmonisation in healthcare: a scoping
+review
+Bey-Marrié Schmidt1,2*
+, Christopher J. Colvin2,3,4, Ameer Hohlfeld1 and Natalie Leon3,5
+Abstract
+Background: Data harmonisation (DH) has emerged amongst health managers, information technology specialists
+and researchers as an important intervention for routine health information systems (RHISs). It is important to
+understand what DH is, how it is defined and conceptualised, and how it can lead to better health management
+decision-making. This scoping review identifies a range of definitions for DH, its characteristics (in terms of key
+components and processes), and common explanations of the relationship between DH and health management
+decision-making.
+Methods: This scoping review identified relevant studies from 2000 onwards (date filter), written in English and
+published in PubMed, Web of Science and CINAHL. Two reviewers independently screened records for potential
+inclusion for the abstract and full-text screening stages. One reviewer did the data extraction, analysis and synthesis,
+with built-in reliability checks from the rest of the team. We developed a narrative synthesis of definitions and
+explanations of the relationship between DH and health management decision-making.
+Results: We sampled 61 of 181 included to synthesis definitions and concepts of DH in detail. We identified six
+common terms for data harmonisation: record linkage, data linkage, data warehousing, data sharing, data
+interoperability and health information exchange. We also identified nine key components of data harmonisation:
+DH involves (a) a process of multiple steps; (b) integrating, harmonising and bringing together different databases
+(c) two or more databases; (d) electronic data; (e) pooling data using unique patient identifiers; and (f) different
+types of data; (g) data found within and across different departments and institutions at facility, district, regional
+and national levels; (h) different types of technical activities; (i) has a specific scope. The relationship between DH
+and health management decision-making is not well-described in the literature. Several studies mentioned health
+providers’ concerns about data completeness, data quality, terminology and coding of data elements as barriers to
+data utilisation for clinical decision-making.
+Conclusion: To our knowledge, this scoping review was the first to synthesise definitions and concepts of DH and
+address the causal relationship between DH and health management decision-making. Future research is required
+to assess the effectiveness of data harmonisation on health management decision-making.
+Keywords: Data harmonisation, Health information exchange, Health information system, Scoping review
+© The Author(s). 2020 Open Access This article is licensed under a Creative Commons Attribution 4.0 International License,
+which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if
+changes were made. The images or other third party material in this article are included in the article's Creative Commons
+licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons
+licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the
+data made available in this article, unless otherwise stated in a credit line to the data.
+* Correspondence: bey-marrie.schmidt@mrc.ac.za
+1Cochrane South Africa, South African Medical Research Council, Francie Van
+Zijl Dr, Parow Valley, Cape Town 7501, South Africa
+2Division of Social and Behavioural Sciences, School of Public Health and
+Family Medicine, University of Cape Town, Cape Town, South Africa
+Full list of author information is available at the end of the article
+Schmidt et al. BMC Medical Informatics and Decision Making (2020) 20:222 
+https://doi.org/10.1186/s12911-020-01218-7
+Background
+Data harmonisation (DH) in healthcare is a digital,
+technology-based innovation that can potentially help
+routine health information systems (RHISs) function at
+their best. It can help organise and integrate large data-
+bases containing routine health information [1]. Design-
+ing, developing and implementing DH interventions has
+the potential to strengthen aspects of the health system,
+by enhancing RHISs to high-quality and relevant infor-
+mation that can support decisions, actions and changes
+across all components and levels of the health system [2,
+3]. When RHISs are functioning proper
+
+====================================================================================================
+FILE: B01_Ayaz_2021_FHIR_Systematic_Literature_Review.pdf
+====================================================================================================
+Review
+The Fast Health Interoperability Resources (FHIR) Standard:
+Systematic Literature Review of Implementations, Applications,
+Challenges and Opportunities
+Muhammad Ayaz1, MSc; Muhammad F Pasha1, PhD; Mohammed Y Alzahrani2, PhD; Rahmat Budiarto3, PhD; Deris
+Stiawan4, PhD
+1Malaysia School of Information Technology, Monash University, Bandar Sunway, Malaysia
+2Information Technology Department, College of Computer Science & Information Technology, Albaha University, Albaha, Saudi Arabia
+3Informatics Department, Faculty of Science & Technology, Universitas Alazhar Indonesia, Jakarta, Indonesia
+4Department of Computer Engineering, Faculty of Computer Science, Universitas Sriwijaya, Palembang, Indonesia
+Corresponding Author:
+Muhammad Ayaz, MSc
+Malaysia School of Information Technology
+Monash University
+Jalan Lagoon Selatan
+Bandar Sunway, 47500
+Malaysia
+Phone: 60 0355146224
+Email: Muhammad.ayaz@monash.edu
+Related Article:
+This is a corrected version. See correction statement in: https://medinform.jmir.org/2021/8/e32869
+Abstract
+Background: Information technology has shifted paper-based documentation in the health care sector into a digital form, in
+which patient information is transferred electronically from one place to another. However, there remain challenges and issues
+to resolve in this domain owing to the lack of proper standards, the growth of new technologies (mobile devices, tablets, ubiquitous
+computing), and health care providers who are reluctant to share patient information. Therefore, a solid systematic literature
+review was performed to understand the use of this new technology in the health care sector. To the best of our knowledge, there
+is a lack of comprehensive systematic literature reviews that focus on Fast Health Interoperability Resources (FHIR)-based
+electronic health records (EHRs). In addition, FHIR is the latest standard, which is in an infancy stage of development. Therefore,
+this is a hot research topic with great potential for further research in this domain.
+Objective: The main aim of this study was to explore and perform a systematic review of the literature related to FHIR, including
+the challenges, implementation, opportunities, and future FHIR applications.
+Methods: In January 2020, we searched articles published from January 2012 to December 2019 via all major digital databases
+in the field of computer science and health care, including ACM, IEEE Explorer, Springer, Google Scholar, PubMed, and
+ScienceDirect. We identified 8181 scientific articles published in this field, 80 of which met our inclusion criteria for further
+consideration.
+Results: 
+The selected 80 scientific articles were reviewed systematically, and we identified open questions, challenges,
+implementation models, used resources, beneficiary applications, data migration approaches, and goals of FHIR.
+Conclusions: The literature analysis performed in this systematic review highlights the important role of FHIR in the health
+care domain in the near future.
+(JMIR Med Inform 2021;9(7):e21929) doi: 10.2196/21929
+KEYWORDS
+Fast Health Interoperability Resources; FHIR; electronic health record; EHR; clinical document architecture; CDA; Substitutable
+Medical Applications Reusable Technologies; SMART; HL7; health standard; systematic literature review
+JMIR Med Inform 2021 | vol. 9 | iss. 7 | e21929 | p. 1
+https://medinform.jmir.org/2021/7/e21929
+(page number not for citation purposes)
+Ayaz et al
+JMIR MEDICAL INFORMATICS
+XSL•FO
+RenderX
+Introduction
+Background
+In 2011, the proponent of Australian Health Level Seven (HL7)
+standards, Grahame Grieve, proposed an interoperability
+approach called Resources for Healthcare (RFH) as a new
+standard for better interoperability in digital health. Technically,
+RFH has been designed for web technology, and the resource
+is based on extensible markup language (XML) with an
+HTTP-based representational state transfer (REST)ful protocol
+and a distinct URL for each resource. The RFH standard was
+renamed Fast Health Interoperability Resources (FHIR) with
+extension of previous HL7 specifications (ie, HL7 version 2
+and version 3) with consideration of modern web technologies
+[1].
+The main idea behind FHIR was to build a set of resources and
+develop HTTP-based REST application programming interfaces
+(APIs) to access and use these resources. FHIR uses components
+called resources to access and perform operations on patient
+health data at the granular level. This feature makes FHIR a
+unique standard from all other standards because it was not
+available in all previous versions of HL7 (v2, v3) or the HL7
+clinical document architecture (CDA).
+The basic building blocks of FHIR are the so-called resources,
+a generic definition of common health care concepts (eg, patient,
+observation, practitioner, device, condition). FHIR uses
+JavaScript object notation and XML structures for data exchange
+and resources serialization. FHIR does not only support a
+RESTful to exchange resources but also manages and docum
+
+====================================================================================================
+FILE: B02_Vorisek_2022_FHIR_Health_Research_Systematic_Review.pdf
+====================================================================================================
+Review
+Fast Healthcare Interoperability Resources (FHIR) for
+Interoperability in Health Research: Systematic Review
+Carina Nina Vorisek1, MD, MSc; Moritz Lehne1, PhD; Sophie Anne Ines Klopfenstein1,2, MD; Paula Josephine
+Mayer1; Alexander Bartschke1, MA; Thomas Haese1, BSc; Sylvia Thun1, MD, PhD
+1Core Facility Digital Medicine and Interoperability, Berlin Institute of Health at Charité – Universitätsmedizin Berlin, Berlin, Germany
+2Institute for Medical Informatics, Charité – Universitätsmedizin Berlin, Berlin, Germany
+Corresponding Author:
+Carina Nina Vorisek, MD, MSc
+Core Facility Digital Medicine and Interoperability
+Berlin Institute of Health at Charité – Universitätsmedizin Berlin
+Anna-Louisa-Karsch-Str. 2
+Berlin, 10178
+Germany
+Phone: 49 30 450 543049
+Email: carina-nina.vorisek@bih-charite.de
+Abstract
+Background: The standard Fast Healthcare Interoperability Resources (FHIR) is widely used in health information technology.
+However, its use as a standard for health research is still less prevalent. To use existing data sources more efficiently for health
+research, data interoperability becomes increasingly important. FHIR provides solutions by offering resource domains such as
+“Public Health & Research” and “Evidence-Based Medicine” while using already established web technologies. Therefore, FHIR
+could help standardize data across different data sources and improve interoperability in health research.
+Objective: The aim of our study was to provide a systematic review of existing literature and determine the current state of
+FHIR implementations in health research and possible future directions.
+Methods: We searched the PubMed/MEDLINE, Embase, Web of Science, IEEE Xplore, and Cochrane Library databases for
+studies published from 2011 to 2022. Studies investigating the use of FHIR in health research were included. Articles published
+before 2011, abstracts, reviews, editorials, and expert opinions were excluded. We followed the PRISMA (Preferred Reporting
+Items for Systematic Reviews and Meta-Analyses) guidelines and registered this study with PROSPERO (CRD42021235393).
+Data synthesis was done in tables and figures.
+Results: We identified a total of 998 studies, of which 49 studies were eligible for inclusion. Of the 49 studies, most (73%,
+n=36) covered the domain of clinical research, whereas the remaining studies focused on public health or epidemiology (6%,
+n=3) or did not specify their research domain (20%, n=10). Studies used FHIR for data capture (29%, n=14), standardization of
+data (41%, n=20), analysis (12%, n=6), recruitment (14%, n=7), and consent management (4%, n=2). Most (55%, 27/49) of the
+studies had a generic approach, and 55% (12/22) of the studies focusing on specific medical specialties (infectious disease,
+genomics, oncology, environmental health, imaging, and pulmonary hypertension) reported their solutions to be conferrable to
+other use cases. Most (63%, 31/49) of the studies reported using additional data models or terminologies: Systematized
+Nomenclature of Medicine Clinical Terms (29%, n=14), Logical Observation Identifiers Names and Codes (37%, n=18),
+International Classification of Diseases 10th Revision (18%, n=9), Observational Medical Outcomes Partnership common data
+model (12%, n=6), and others (43%, n=21). Only 4 (8%) studies used a FHIR resource from the domain “Public Health &
+Research.” Limitations using FHIR included the possible change in the content of FHIR resources, safety, legal matters, and the
+need for a FHIR server.
+Conclusions: Our review found that FHIR can be implemented in health research, and the areas of application are broad and
+generalizable in most use cases. The implementation of international terminologies was common, and other standards such as
+the Observational Medical Outcomes Partnership common data model could be used as a complement to FHIR. Limitations such
+as the change of FHIR content, lack of FHIR implementation, safety, and legal matters need to be addressed in future releases to
+expand the use of FHIR and, therefore, interoperability in health research.
+JMIR Med Inform 2022 | vol. 10 | iss. 7 | e35724 | p. 1
+https://medinform.jmir.org/2022/7/e35724
+(page number not for citation purposes)
+Vorisek et al
+JMIR MEDICAL INFORMATICS
+XSL•FO
+RenderX
+(JMIR Med Inform 2022;10(7):e35724) doi: 10.2196/35724
+KEYWORDS
+Fast Healthcare Interoperability Resources; FHIR; interoperability; health research; health care; health information technology;
+research; clinical research; public health; epidemiology
+Introduction
+Within the current COVID-19 pandemic, there was a broad
+realization of the currently limited data collection processes and
+how powerful the exchange of scientific data could be if
+interoperability between health care and research was provided
+[1]. Although there was a large amount of data in the health
+care ecosystem, there was lack of data that adheres to Findable,
+Accessible, Interoperable, and Reusable [2] principles for users
+to find, use, a
+
+====================================================================================================
+FILE: B03_Pedrera-Jimenez_2023_OpenEHR_ISO13606_FHIR.pdf
+====================================================================================================
+Viewpoint
+Can OpenEHR, ISO 13606, and HL7 FHIR Work Together? An
+Agnostic Approach for the Selection and Application of Electronic
+Health Record Standards to the Next-Generation Health Data
+Spaces
+Miguel Pedrera-Jiménez1,2, PhD; Noelia García-Barrio1, MSc; Santiago Frid3, MD; David Moner4, PhD; Diego
+Boscá-Tomás4, PhD; Raimundo Lozano-Rubí3, PhD; Dipak Kalra5, PhD; Thomas Beale6, PhD; Adolfo Muñoz-Carrero7,
+PhD; Pablo Serrano-Balazote1, MD
+1Data Science Unit, Hospital Universitario 12 de Octubre, Madrid, Spain
+2ETSI Telecomunicación, Universidad Politécnica de Madrid, Madrid, Spain
+3Medical Informatics Unit, Hospital Clinic de Barcelona, Barcelona, Spain
+4Veratech for Health, Valencia, Spain
+5The European Institute for Innovation through Health Data, Gent, Belgium
+6Ars Semantica, London, United Kingdom
+7Telemedicine and Digital Health Research Unit, Instituto de Salud Carlos III, Madrid, Spain
+Corresponding Author:
+Miguel Pedrera-Jiménez, PhD
+Data Science Unit
+Hospital Universitario 12 de Octubre
+Av. de Córdoba, s/n
+Madrid, 28041
+Spain
+Phone: 34 634209791
+Email: mpedrerajimenez@gmail.com
+Abstract
+In order to maximize the value of electronic health records (EHRs) for both health care and secondary use, it is necessary for the
+data to be interoperable and reusable without loss of the original meaning and context, in accordance with the findable, accessible,
+interoperable, and reusable (FAIR) principles. To achieve this, it is essential for health data platforms to incorporate standards
+that facilitate addressing needs such as formal modeling of clinical knowledge (health domain concepts) as well as the harmonized
+persistence, query, and exchange of data across different information systems and organizations. However, the selection of these
+specifications has not been consistent across the different health data initiatives, often applying standards to address needs for
+which they were not originally designed. This issue is essential in the current scenario of implementing the European Health Data
+Space, which advocates harmonization, interoperability, and reuse of data without regulating the specific standards to be applied
+for this purpose. Therefore, this viewpoint aims to establish a coherent, agnostic, and homogeneous framework for the use of the
+most impactful EHR standards in the new-generation health data spaces: OpenEHR, International Organization for Standardization
+(ISO) 13606, and Health Level 7 (HL7) Fast Healthcare Interoperability Resources (FHIR). Thus, a panel of EHR standards
+experts has discussed several critical points to reach a consensus that will serve decision-making teams in health data platform
+projects who may not be experts in these EHR standards. It was concluded that these specifications possess different capabilities
+related to modeling, flexibility, and implementation resources. Because of this, in the design of future data platforms, these
+standards must be applied based on the specific needs they were designed for, being likewise fully compatible with their combined
+functional and technical implementation.
+(J Med Internet Res 2023;25:e48702) doi: 10.2196/48702
+KEYWORDS
+electronic health records; FAIR principles; health information standards; HL7 FHIR; ISO 13606; OpenEHR; semantics
+J Med Internet Res 2023 | vol. 25 | e48702 | p. 1
+https://www.jmir.org/2023/1/e48702
+(page number not for citation purposes)
+Pedrera-Jiménez et al
+JOURNAL OF MEDICAL INTERNET RESEARCH
+XSL•FO
+RenderX
+Problem to Solve: Electronic Health
+Record Standards Are Applied for
+Purposes for Which They Were not
+Designed
+The electronic health record (EHR) is defined as the repository
+of health data generated throughout the patient’s lifetime, which
+is used in the provision of health care to the individual or the
+population [1]. Additionally, EHR data may have uses other
+than health care practice, known as secondary use, including
+activities such as health research or the evaluation of health
+outcomes [2]. In order to achieve a genuine use of EHR data,
+according to findable, accessible, interoperable, and reusable
+(FAIR) principles [3], it is necessary for information systems
+to overcome a number of shortcomings: (1) they are designed
+based on the generation of clinical reports where unstructured
+data predominates; (2) they embed the semantics of health
+domain concepts in the persistence data model; and (3) they do
+not apply health information standards or do so to a limited
+scope. One approach to solving these challenges lies in the
+design of health data platforms based on standards [4].
+In this regard, different projects have emerged in Spain with
+the aim of building standardized EHR platforms. At a regional
+level, 2 projects aim to implement standardized persistence
+EHRs: the project launched in the Catalonia region [5], based
+on the OpenEHR specification [6], and the collaborative project
+between the regions of Castilla La Mancha and the Canary
+Islands [7], which is based on the International Organization
+for S
+
+====================================================================================================
+FILE: B04_Bossenko_2024_CDA_to_FHIR_Mapping.pdf
+====================================================================================================
+EDITED BY
+Xia Jing,
+Clemson University, United States
+REVIEWED BY
+Stefan Buttigieg,
+University of Malta, Malta
+Bernd G. M. E. Blobel,
+University of Regensburg, Germany
+*CORRESPONDENCE
+Igor Bossenko
+igor.bossenko@taltech.ee
+RECEIVED 21 August 2024
+ACCEPTED 13 November 2024
+PUBLISHED 19 December 2024
+CITATION
+Bossenko I, Randmaa R, Piho G and Ross P
+(2024) Interoperability of health data using
+FHIR Mapping Language: transforming HL7
+CDA to FHIR with reusable visual components.
+Front. Digit. Health 6:1480600.
+doi: 10.3389/fdgth.2024.1480600
+COPYRIGHT
+© 2024 Bossenko, Randmaa, Piho and Ross.
+This is an open-access article distributed
+under the terms of the Creative Commons
+Attribution License (CC BY). The use,
+distribution or reproduction in other forums is
+permitted, provided the original author(s) and
+the copyright owner(s) are credited and that
+the original publication in this journal is cited,
+in accordance with accepted academic
+practice. No use, distribution or reproduction
+is permitted which does not comply with
+these terms.
+Interoperability of health data
+using FHIR Mapping Language:
+transforming HL7 CDA to FHIR
+with reusable visual components
+Igor Bossenko
+1*, Rainer Randmaa
+1, Gunnar Piho
+1 and
+Peeter Ross
+2,3
+1Department of Software Science, Tallinn University of Technology (TalTech), Tallinn, Estonia,
+2Department of Health Technologies, TalTech, Tallinn, Estonia, 3Research Department, East Tallinn
+Central Hospital, Tallinn, Estonia
+Introduction: Ecosystem-centered healthcare innovations, such as digital health
+platforms, patient-centric records, and mobile health applications, depend on
+the semantic interoperability of health data. This ensures efﬁcient, patient-
+focused healthcare delivery in a mobile world where citizens frequently travel
+for work and leisure. Beyond healthcare delivery, semantic interoperability is
+crucial for secondary health data use. This paper introduces a tool and
+techniques for achieving health data semantic interoperability, using reusable
+visual transformation components to create and validate transformation rules
+and maps, making them usable for domain experts with minimal technical skills.
+Methods: The tool and techniques for health data semantic interoperability have
+been developed and validated using Design Science, a common methodology
+for developing software artifacts, including tools and techniques.
+Results: Our tool and techniques are designed to facilitate the interoperability of
+Electronic Health Records (EHRs) by enabling the seamless uniﬁcation of various
+health data formats in real time, without the need for extensive physical data
+migrations. These tools simplify complex health data transformations, allowing
+domain experts to specify and validate intricate data transformation rules and
+maps. The need for such a solution arises from the ongoing transition of the
+Estonian National Health Information System (ENHIS) from Clinical Document
+Architecture (CDA) to Fast Healthcare Interoperability Resources (FHIR), but it
+is general enough to be used for other data transformation needs, including
+the European Health Data Space (EHDS) ecosystem.
+Conclusion: The proposed tool and techniques simplify health data transformation
+by allowing domain experts to specify and validate the necessary data transformation
+rules and maps. Evaluation by ENHIS domain experts demonstrated the usability,
+effectiveness, and business value of the tool and techniques.
+KEYWORDS
+FHIR Mapping Language (FML), TermX, semantic interoperability, data transformation,
+HL7 Clinical Document Architecture (CDA), HL7 Fast Healthcare Interoperability
+Resources (FHIR)
+1 Introduction
+Electronic Health Records (EHRs) are shared patient records that contain historical
+data about a patient compiled from all local Electronic Medical Records (EMR). EHRs
+serve a dual purpose in the healthcare ecosystem. Primarily, healthcare professionals use
+EHRs in healthcare delivery to access patient medical histories, diagnoses, treatments,
+TYPE Original Research
+PUBLISHED 19 December 2024
+|
+DOI 10.3389/fdgth.2024.1480600
+Frontiers in Digital Health
+01
+frontiersin.org
+and treatment outcomes (1). Additionally, routine clinical data is
+valuable for secondary use in clinical research, public health
+assurance, healthcare ﬁnancing, and health policy-making (2) by
+enabling the aggregation and analysis of health data to improve
+healthcare (3, 4).
+The European Health Data Space (EHDS) initiative (5) aims to
+build a health data sharing ecosystem (6) within the European
+Union (EU), establishing standards, practices, infrastructures and
+governance to support the primary and secondary use of EHRs
+(7). It facilitates healthcare access across borders in a mobile
+world where people travel for work and leisure (8). While the
+EHDS has ambitious targets to improve data sharing and patient
+access across the EU, there are concerns that it might be too
+large an undertaking to succeed (9). Additionally, it could
+undermine patients’ control over
+
+====================================================================================================
+FILE: B05_Caffery_2021_DICOM_AI_Skin_Disease.pdf
+====================================================================================================
+PERSPECTIVE
+published: 10 February 2021
+doi: 10.3389/fmed.2020.619787
+Frontiers in Medicine | www.frontiersin.org
+1
+February 2021 | Volume 7 | Article 619787
+Edited by:
+Ivan V. Litvinov,
+McGill University, Canada
+Reviewed by:
+Luís Bastião Silva,
+BMD Software, Portugal
+Piergiacomo Calzavara-pinton,
+University of Brescia, Italy
+Carlos Costa,
+University of Aveiro, Portugal
+*Correspondence:
+Liam J. Caffery
+l.caffery@uq.edu.au
+Specialty section:
+This article was submitted to
+Dermatology,
+a section of the journal
+Frontiers in Medicine
+Received: 21 October 2020
+Accepted: 31 December 2020
+Published: 10 February 2021
+Citation:
+Caffery LJ, Rotemberg V, Weber J,
+Soyer HP, Malvehy J and Clunie D
+(2021) The Role of DICOM in Artiﬁcial
+Intelligence for Skin Disease.
+Front. Med. 7:619787.
+doi: 10.3389/fmed.2020.619787
+The Role of DICOM in Artiﬁcial
+Intelligence for Skin Disease
+Liam J. Caffery 1,2*, Veronica Rotemberg 3, Jochen Weber 3, H. Peter Soyer 2,4,
+Josep Malvehy 5 and David Clunie 6
+1 Centre for Online, Centre for Health Services Research, The University of Queensland, Brisbane, QLD, Australia,
+2 Dermatology Research Centre, The University of Queensland Diamantina Institute, The University of Queensland, Brisbane,
+QLD, Australia, 3 Dermatology Service, Department of Medicine, Memorial Sloan Kettering Cancer Center, New York, NY,
+United States, 4 Department of Dermatology, Princess Alexandra Hospital, Brisbane, QLD, Australia, 5 Department of
+Dermatology, Institut d’Investigacions Biomèdiques August Pi i Sunyer, Hospital Clinic of Barcelona, University of Barcelona,
+Barcelona, Spain, 6 PixelMed Publishing, Bangor, PA, United States
+There is optimism that artiﬁcial intelligence (AI) will result in positive clinical outcomes,
+which is driving research and investment in the use of AI for skin disease. At present,
+AI for skin disease is embedded in research and development and not practiced
+widely in clinical dermatology. Clinical dermatology is also undergoing a technological
+transformation in terms of the development and adoption of standards that optimizes
+the quality use of imaging. Digital Imaging and Communications in Medicine (DICOM)
+is the international standard for medical imaging. DICOM is a continually evolving
+standard. There is considerable effort being invested in developing dermatology-speciﬁc
+extensions to the DICOM standard. The ability to encode relevant metadata and afford
+interoperability with the digital health ecosystem (e.g., image repositories, electronic
+medical records) has driven the initial impetus in the adoption of DICOM for dermatology.
+DICOM has a dedicated working group whose role is to develop a mechanism to
+support AI workﬂows and encode AI artifacts. DICOM can improve AI workﬂows
+by encoding derived objects (e.g., secondary images, visual explainability maps, AI
+algorithm output) and the efﬁcient curation of multi-institutional datasets for machine
+learning training, testing, and validation. This can be achieved using DICOM mechanisms
+such as standardized image formats and metadata, metadata-based image retrieval,
+and de-identiﬁcation protocols. DICOM can address several important technological and
+workﬂow challenges for the implementation of AI. However, many other technological,
+ethical, regulatory, medicolegal, and workforce barriers will need to be addressed before
+DICOM and AI can be used effectively in dermatology.
+Keywords: dermatology, artiﬁcial intelligence, DICOM, standards, imaging
+INTRODUCTION
+The Digital Imaging and Communications in Medicine (DICOM) standard (1) is a comprehensive,
+international standard for medical imaging. DICOM deﬁnes a standard medical image ﬁle format
+and a metadata model and network services for the storage, transmission, and query and retrieval
+of objects. DICOM has also speciﬁed other network services to improve the eﬃciency of medical
+imaging workﬂows.
+Caffery et al.
+DICOM for AI Skin Disease
+The most common DICOM data object is an image ﬁle.
+A DICOM image ﬁle consists of metadata and the pixel
+data of the image melded into a single ﬁle. The pixel data
+may be encoded using the Joint Photographic Expert Group
+format or other standard compression methods. The metadata
+model is standardized by object type, meaning there are
+diﬀerent metadata models for, say, a magnetic resonance
+image, and a photographic image. The metadata model is
+described in an Information Object Deﬁnition (IOD). An
+IOD consists of an amalgamation of modules, where each
+module is a collection of patient, study, equipment, and image
+metadata attributes.
+Although DICOM is ubiquitous in some medical image-
+producing specialties (e.g., radiology, cardiology, and radiation
+therapy), to date, the use of DICOM for dermatological
+imaging has been limited. There is, however, a growing
+realization that the adoption of DICOM for dermatological
+imaging is advantageous compared with other methods of
+image management (2). Clinical imaging for dermatology can
+be encoded using the existing, vi
+
+====================================================================================================
+FILE: C01_deMello_2022_Semantic_Interoperability_Standards_SLR.pdf
+====================================================================================================
+Semantic interoperability in health records standards: a
+systematic literature review
+2022-01-26
+Abstract
+The integration and exchange of information among health organizations and system providers are currently
+regarded as a challenge. Each organization usually has an internal ecosystem and a proprietary way to store
+electronic health records of the patient’s history. Recent research explores the advantages of an integrated
+ecosystem by exchanging information between the different inpatient care actors. Many efforts seek quality in
+health care, economy, and sustainability in process management. Some examples are reducing medical errors,
+disease control and monitoring, individualized patient care, and avoiding duplicate and fragmented entries in the
+electronic medical record. Likewise, some studies showed technologies to achieve this goal effectively and efficiently,
+with the ability to interoperate data, allowing the interpretation and use of health information. To that end,
+semantic interoperability aims to share data among all the sectors in the organization, clinicians, nurses, lab, the
+entire hospital. Therefore, avoiding data silos and keep data regardless of vendors, to exchange the information
+across organizational boundaries. This study presents a comprehensive systematic literature review of semantic
+interoperability in electronic health records. We searched seven databases of articles published between 2010 to
+September 2020. We showed the most chosen scenarios, technologies, and tools employed to solve interoperability
+problems, and we propose a taxonomy around semantic interoperability in health records. Also, we presented the
+main approaches to solve the exchange problem of legacy and heterogeneous data across healthcare organizations.
+Keywords: Semantic interoperability, Health standard, Health record, EHR, Systematic review
+Received 2021 Oct 19; Accepted 2022 Jan 7; Issue date 2022.
+Introduction
+A semantically integrated health system allows sharing data among organizations and their internal ecosystem
+without missing the meaning. The search for semantic interoperability in health records and different clinical
+annotations is one of the main challenges for systems, being a constant objective of studies in the last years, such as
+[1–3]. Implementing interoperability can allow healthcare professionals to manage the complete electronic patient
+record, regardless of the organization that generated the clinical session entries [4]. As reinforced by Kim and Joshi
+[5], health record interoperability became a crucial issue in the healthcare scenario, especially in the COVID-19
+pandemic, to further disease control.
+Semantic interoperability (SI) aims to share data among organizations or systems and ensure they understand and
+interpret data regardless of who is involved, using domain concepts, context knowledge, and formal data
+representation [6]. On the other hand, semantic interoperability also can be understood by taking a step back:
+semantics is the study of meaning, focused on the relationship between people and their words, which is essential to
+help people understand each other despite different experiences or viewpoints [7]. Interoperability is the ability of
+two or more systems to work together, regardless of its different interfaces, platforms, and technologies adopted [8].
+The HIMSS [9]1 – a global advisor supporting the transformation of the health ecosystem, with 480 provider
+organizations and more than 450 non-profit partners – had designed defined in three levels the interoperability
+technology: 1) Foundation; 2) Structural and 3) Semantic. The Foundational level defined requirements to connect
+different systems and securely exchange data. The Structural level defines the format, syntax, and data to interpret
+at the field level; the Semantic level allows one to work with terminologies, vocabularies, standardized values
+publicly defined and makes a complete understanding meaning.
+According to Gancel et al.. [10], there are many challenges to overcome to achieve an electronic health record, such
+as understanding the wide variety of terms, addressing disambiguation, identifying and updating the concepts. That
+scenario is reinforced by [11, 12], where the authors had discussed the three fundamental levels of interoperability to
+improve the workflows across health information systems to allow true interoperability. To the healthcare area,
+interoperability means different systems, applications, and devices share, use, and process data from any place and
+keep the real meaning.
+Using standards allows sharing data between clinicians, lab, hospital and, pharmacies regardless of vendor,
+achieving semantic interoperability. In other words, interoperability allows health information systems to work
+across organizational boundaries.
+From the above, the main contributions of this paper are as follows:
+discussion about the state of the art of semantic interoperability in health records.
+introduce a tax
+
+====================================================================================================
+FILE: C02_Gaudet-Blavignac_2021_SNOMEDCT_FreeText_Scoping_Review.pdf
+====================================================================================================
+Review
+Use of the Systematized Nomenclature of Medicine Clinical Terms
+(SNOMED CT) for Processing Free Text in Health Care:
+Systematic Scoping Review
+Christophe Gaudet-Blavignac1,2, BSc, MSc; Vasiliki Foufi1,2, PhD; Mina Bjelogrlic1,2, PhD; Christian Lovis1,2, MPH,
+MD, FACMI
+1Division of Medical Information Sciences, Geneva University Hospitals, Geneva, Switzerland
+2Department of Radiology and Medical Informatics, University of Geneva, Geneva, Switzerland
+Corresponding Author:
+Christophe Gaudet-Blavignac, BSc, MSc
+Division of Medical Information Sciences
+Geneva University Hospitals
+Rue Gabrielle-Perret-Gentil 4
+Geneva, 1205
+Switzerland
+Phone: 41 22 372 62 01
+Email: christophe.gaudet-blavignac@hcuge.ch
+Abstract
+Background: Interoperability and secondary use of data is a challenge in health care. Specifically, the reuse of clinical free text
+remains an unresolved problem. The Systematized Nomenclature of Medicine Clinical Terms (SNOMED CT) has become the
+universal language of health care and presents characteristics of a natural language. Its use to represent clinical free text could
+constitute a solution to improve interoperability.
+Objective: Although the use of SNOMED and SNOMED CT has already been reviewed, its specific use in processing and
+representing unstructured data such as clinical free text has not. This review aims to better understand SNOMED CT's use for
+representing free text in medicine.
+Methods: A scoping review was performed on the topic by searching MEDLINE, Embase, and Web of Science for publications
+featuring free-text processing and SNOMED CT. A recursive reference review was conducted to broaden the scope of research.
+The review covered the type of processed data, the targeted language, the goal of the terminology binding, the method used and,
+when appropriate, the specific software used.
+Results: In total, 76 publications were selected for an extensive study. The language targeted by publications was 91% (n=69)
+English. The most frequent types of documents for which the terminology was used are complementary exam reports (n=18,
+24%) and narrative notes (n=16, 21%). Mapping to SNOMED CT was the final goal of the research in 21% (n=16) of publications
+and a part of the final goal in 33% (n=25). The main objectives of mapping are information extraction (n=44, 39%), feature in a
+classification task (n=26, 23%), and data normalization (n=23, 20%). The method used was rule-based in 70% (n=53) of
+publications, hybrid in 11% (n=8), and machine learning in 5% (n=4). In total, 12 different software packages were used to map
+text to SNOMED CT concepts, the most frequent being Medtex, Mayo Clinic Vocabulary Server, and Medical Text Extraction
+Reasoning and Mapping System. Full terminology was used in 64% (n=49) of publications, whereas only a subset was used in
+30% (n=23) of publications. Postcoordination was proposed in 17% (n=13) of publications, and only 5% (n=4) of publications
+specifically mentioned the use of the compositional grammar.
+Conclusions: SNOMED CT has been largely used to represent free-text data, most frequently with rule-based approaches, in
+English. However, currently, there is no easy solution for mapping free text to this terminology and to perform automatic
+postcoordination. Most solutions conceive SNOMED CT as a simple terminology rather than as a compositional bag of ontologies.
+Since 2012, the number of publications on this subject per year has decreased. However, the need for formal semantic representation
+of free text in health care is high, and automatic encoding into a compositional ontology could be a solution.
+(J Med Internet Res 2021;23(1):e24594) doi: 10.2196/24594
+J Med Internet Res 2021 | vol. 23 | iss. 1 | e24594 | p. 1
+http://www.jmir.org/2021/1/e24594/
+(page number not for citation purposes)
+Gaudet-Blavignac et al
+JOURNAL OF MEDICAL INTERNET RESEARCH
+XSL•FO
+RenderX
+KEYWORDS
+SNOMED CT; natural language processing; scoping review; terminology
+Introduction
+Background
+The ability to meaningfully exchange and process data is of
+utmost importance in health care, whether it is inside a hospital
+setting either among different health structures or among health
+systems in different countries [1-3]. The use of a common
+terminology is a way to improve both interoperability and the
+secondary use of data [4].
+The Systematized Nomenclature of Medicine Clinical Terms
+(SNOMED CT) was created in 1999 by the fusion of 2 important
+health care terminologies—SNOMED reference terminology
+(SNOMED RT) and Clinical Terms Version 3. It was first
+released in 2002. SNOMED CT is currently considered as the
+most comprehensive, multilingual, clinical health care
+terminology in the world, with more than 350,000 concepts and
+a million relationships [5-7]. It is maintained and published by
+SNOMED International, a nonprofit organization comprising
+39 member countries [8]. In the last 18 years, SNOMED CT
+has grown in size and coverage and has been included as a
+standard vocabulary in the meaning
+
+====================================================================================================
+FILE: C03_Rossander_2021_SNOMEDCT_Terminology_Binding.pdf
+====================================================================================================
+A State-of-the Art Review of SNOMED CT
+Terminology Binding and Recommendations for
+Practice and Research
+Anna Rossander1
+Lars Lindsköld1
+Agneta Ranerup1
+Daniel Karlsson2
+1Department of Applied Information Technology, University of
+Gothenburg, Göteborg, Sweden
+2eHealth and Structured Information Unit, National Board of Health
+and Welfare, Stockholm, Sweden
+Methods Inf Med 2021;60:e76–e88.
+Address for correspondence Anna Rossander, Department of Applied
+Information Technology, University of Gothenburg, 412 96 Göteborg,
+Sweden (e-mail: anna.rossander@gu.se).
+Introduction
+Datasharing withinandbetweenstakeholdersin health care is
+low. Part of the problem is lack of semantic interoperability, in
+other words the data entered at one place and time cannot be
+reused in other places and over time unambiguously.
+SNOMED CT has evolved over decades into what today is
+the most comprehensive terminology in the medical ﬁeld. In
+2016 it was judged “the best available core reference termi-
+nology for cross-border, national, and regional eHealth deploy-
+ments in Europe.”1 But neither SNOMED CT nor any other
+Keywords
+►terminology binding
+►SNOMED CT
+►electronic health
+records
+►information models
+Abstract
+Background
+Unambiguous sharing of data requires information models and termi-
+nology in combination, but there is a lack of knowledge as to how they should be
+combined, leading to impaired interoperability.
+Objectives
+To facilitate creation of guidelines for SNOMED CT terminology binding
+we have performed a literature review to ﬁnd existing recommendations and expose
+knowledge gaps. The primary audience is practitioners and researchers working with
+terminology binding.
+Methods
+PubMed, Scopus, and Web of Science were searched for papers containing
+“terminology binding,” “subset,” “map,” “information model” or “implement” and the
+term “SNOMED.”
+Results
+The search yielded 616 unique papers published from 2004 to 2020, from
+which 55 papers were selected and analyzed inductively. Topics described in the papers
+include problems related to input material, SNOMED CT, information models, and lack
+of appropriate tools as well as recommendations regarding competence.
+Conclusion
+Recommendations are given for practitioners and researchers. Many of
+the stated problems can be solved by better co-operation between domain experts and
+informaticians and better knowledge of SNOMED CT. Settings where these compe-
+tences either work together or where staff with knowledge of both act as brokers are
+well equipped for terminology binding. Tooling is not thoroughly researched and might
+be a possible way to facilitate terminology binding.
+received
+February 22, 2021
+accepted after revision
+May 20, 2021
+published online
+September 28, 2021
+DOI https://doi.org/
+10.1055/s-0041-1735167.
+ISSN 0026-1270.
+© 2021. The Author(s).
+This is an open access article published by Thieme under the terms of the
+Creative Commons Attribution-NonDerivative-NonCommercial-License,
+permitting copying and reproduction so long as the original work is given
+appropriate credit. Contents may not be used for commercial purposes, or
+adapted, remixed, transformed or built upon. (https://creativecommons.org/
+licenses/by-nc-nd/4.0/)
+Georg Thieme Verlag KG, Rüdigerstraße 14, 70469 Stuttgart,
+Germany
+Original Article
+THIEME
+e76
+Article published online: 2021-09-28
+terminology is a stand-alone solution to the problem of
+semantic interoperability, a terminology must be used in
+harmonisation with one or many information models that
+can provide structure.
+Establishing links between elements of a terminology and
+an information model is called terminology binding2 and is
+also often referred to as mapping or subset development.
+Terminology binding is typically performed during conﬁgu-
+ration of health record systems, in response to data sharing
+efforts or during implementation of decision support sys-
+tems. Providing relevant subsets for different parts of an
+information model terminology binding can also facilitate
+natural language processing (NLP) of narrative text.
+There is, however, a lack of published guidelines on the
+process of terminology binding SNOMED CT. A paper from
+2012 describes a method for mapping,3 but a survey on
+SNOMED CT implementations in 2013 stated that there is a
+lack of “subset development methodologies,”4 and a literature
+review in 2015 stated that these processes were rarely de-
+scribed.5 In 2015, the TermInfo project6 wrote guidelines for
+the binding of SNOMED CT to HL7 Reference Information
+Model, and in 2016 it was proposed that guidelines should
+be developed on the combination of information model ele-
+mentsandSNOMEDCThierarchyaswellasgranularity issues.1
+Lack of guidelines makes performing terminology binding
+difﬁcult and the result inconsistent, hindering reuse of data
+and impeding transformation to sharable data in health care.
+Objectives
+This paper provides a state-of-the-art review7 and analysis of
+research published about terminology binding processes
+concerning
+
+====================================================================================================
+FILE: C04_Chatterjee_2022_FHIR_SNOMEDCT_Semantic_Interoperability.pdf
+====================================================================================================
+ 
+ 
+ 
+ 
+Sensors 2022, 22, 3756. https://doi.org/10.3390/s22103756 
+www.mdpi.com/journal/sensors 
+Article 
+HL7 FHIR with SNOMED-CT to Achieve Semantic and 
+Structural Interoperability in Personal Health Data: 
+A Proof-of-Concept Study 
+Ayan Chatterjee 1,*, Nibedita Pahari 2 and Andreas Prinz 1 
+1 Department of Information and Communication Technology, Center for eHealth, University of Agder, 
+4630 Kristiansand, Norway; andreas.prinz@uia.no 
+2 Department of Software Development, Knowit As, 4836 Arendal, Norway; nibedita.pahari@knowit.no 
+* Correspondence: ayan.chatterjee@uia.no 
+Abstract: Heterogeneity is a problem in storing and exchanging data in a digital health information 
+system (HIS) following semantic and structural integrity. The existing literature shows different 
+methods to overcome this problem. Fast healthcare interoperable resources (FHIR) as a structural 
+standard may explain other information models, (e.g., personal, physiological, and behavioral data 
+from heterogeneous sources, such as activity sensors, questionnaires, and interviews) with semantic 
+vocabularies, (e.g., Systematized Nomenclature of Medicine—Clinical Terms (SNOMED-CT)) to 
+connect personal health data to an electronic health record (EHR). We design and develop an intui-
+tive health coaching (eCoach) smartphone application to prove the concept. We combine HL7 FHIR 
+and SNOMED-CT vocabularies to exchange personal health data in JavaScript object notion (JSON). 
+This study explores and analyzes our attempt to design and implement a structurally and logically 
+compatible tethered personal health record (PHR) that allows bidirectional communication with an 
+EHR. Our eCoach prototype implements most PHR-S FM functions as an interoperability quality 
+standard. Its end-to-end (E2E) data are protected with a TSD (Services for Sensitive Data) security 
+mechanism. We achieve 0% data loss and 0% unreliable performances during data transfer between 
+PHR and EHR. Furthermore, this experimental study shows the effectiveness of FHIR modular re-
+sources toward flexible management of data components in the PHR (eCoach) prototype. 
+Keywords: HL7; FHIR; SNOMED-CT; PHR; PGHD; PHR-S FM; interoperability; eCoach; TSD 
+ 
+1. Introduction 
+1.1. Overview 
+As defined by the National Health IT Coordinator, personal and/or person-generated 
+health data (PGHD) are created, and recorded by individuals, family members, or care-
+givers either passively or continuously to create an accurate and comprehensive picture 
+of health and health plans, (e.g., decision support, recommendation generation, diagnos-
+tics, treatment plan) [1–3]. Individuals cannot directly access their health data stored in-
+side EHR. The primary stakeholders are participants or patients interested in acquiring 
+their data to monitor chronic illness or track fitness levels and engage more in their health 
+wellness evaluation. They consent to process or share their personal health information 
+with actual providers. PGHD is maintained and processed by primary healthcare profes-
+sionals and researchers on the provider side. PGHD includes health history, biometric 
+data, symptoms, medication effects, physiological data, behavioral data, (e.g., sleep, diet, 
+habit, work, and exercise), lifestyle choices, patient-reported outcome measures, and 
+treatment history. The sources of PGHD can be mobile applications, wearable devices, 
+Citation: Chatterjee, A.; Pahari, N.; 
+Prinz, A. HL7 FHIR with 
+SNOMED-CT to Achieve Semantic 
+and Structural Interoperability in 
+Personal Health Data: A 
+Proof-of-Concept Study. Sensors 
+2022, 22, 3756. 
+https://doi.org/10.3390/s22103756 
+Academic Editor: Eugenio Santoro 
+Received: 17 March 2022 
+Accepted: 13 May 2022 
+Published: 15 May 2022 
+Publisher’s Note: MDPI stays neu-
+tral with regard to jurisdictional 
+claims in published maps and institu-
+tional affiliations. 
+ 
+Copyright: © 2022 by the authors. Li-
+censee MDPI, Basel, Switzerland. 
+This article is an open access article 
+distributed under the terms and con-
+ditions of the Creative Commons At-
+tribution (CC BY) license (https://cre-
+ativecommons.org/licenses/by/4.0/). 
+Sensors 2022, 22, 3756 
+2 of 47 
+ 
+ 
+registered medical grade devices, interviews, surveys, questionnaires, or any other inter-
+actions with technology that produce personal data about health. PGHD is the key to im-
+proving health outcomes, care delivery, and patients’ lives, and therefore should be part 
+of any evidence generation strategy. The U.S. Food and Drug Administration (FDA) rec-
+ognizes the vital role of these data, identifies PGHD as one of the primary sources of real-
+world data, and recommends creating real-world evidence for critical analyses of random-
+ized trials and observational studies using PGHD. PGHD has been essential to provide 
+deeper insights for developing new medical products and providing more human-cen-
+tered care [1–8]. 
+According to the Markel Foundation, the PHR is, “an electronic application through 
+which in
+
+====================================================================================================
+FILE: C05_Bietenbeck_2021_Preparing_Laboratories_Interconnected_Care.pdf
+====================================================================================================
+diagnostics
+Opinion
+Preparing Laboratories for Interconnected Health Care
+Andreas Bietenbeck 1,* and Thomas Streichert 2
+
+
+Citation: Bietenbeck, A.; Streichert, T.
+Preparing Laboratories for
+Interconnected Health Care.
+Diagnostics 2021, 11, 1487. https://
+doi.org/10.3390/diagnostics11081487
+Academic Editor: Paul Froom
+Received: 11 June 2021
+Accepted: 28 July 2021
+Published: 17 August 2021
+Publisher’s Note: MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional afﬁl-
+iations.
+Copyright: © 2021 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed
+under
+the
+terms
+and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+1
+Institut für Laboratoriumsmedizin, Medizinische Mikrobiologie und Technische Hygiene, München Klinik,
+80804 Munich, Germany
+2
+Institut für Klinische Chemie, Universität zu Köln, Medizinische Fakultät und Uniklinik Köln,
+50937 Cologne, Germany; thomas.streichert@uk-koeln.de
+*
+Correspondence: andreas.bietenbeck@muenchen-klinik.de
+Abstract: In an increasingly interconnected health care system, laboratory medicine can facilitate
+diagnosis and treatment of patients effectively. This article describes necessary changes and points to
+potential challenges on a technical, content, and organizational level. As a technical precondition,
+electronic laboratory reports have to become machine-readable and interpretable. Terminologies
+such as Logical Observation Identiﬁers Names and Codes (LOINC), Nomenclature for Properties and
+Units (NPU), Uniﬁed Code for Units of Measure (UCUM), and SNOMED-CT can lead to the necessary
+semantic interoperability. Even if only single “atomized” results of the whole report are extracted, the
+necessary information for correct interpretation must be available. Therefore, interpretive comments,
+e.g., concerns about an increased measurement uncertainty must be electronically attached to every
+affected measurement result. Standardization of laboratory analyses with traceable standards and
+reference materials will enable knowledge transfer and safe interpretation of laboratory analyses from
+multiple laboratories. In an interconnected health care system, laboratories should strive to transform
+themselves into a data hub that not only receives samples but also extensive information about the
+patient. On that basis, they can return measurement results enriched with high-quality interpretive
+comments tailored to the individual patient and unlock the full potential of laboratory medicine.
+Keywords: interconnected healthcare; LOINC; SNOMED-CT; UCUM; NPU
+1. Introduction
+Laboratory medicine has a long history of using information technology to optimize
+processes in the laboratory. Now information and telecommunication technologies promise
+to transform the whole of medicine. In an interconnected health care system, a team of
+specialists replaces the single physician who is solely responsible for a patient. In frag-
+mented clinical pathways, telecommunication links specialized entities. Here, laboratory
+measurements of a patient are no longer conducted in a single laboratory. Even today, rare
+analyses are usually conducted in specialized laboratories. Point-of-care tests, including
+continuous sensors, perform additional measurements. Using electronic patient records or
+other IT infrastructure, laboratory results will be exchanged and aggregated. Transmitted
+electronically, they are always available at the point of treatment. Various medical spe-
+cialists are no longer the only recipients of the laboratory report. Other entities, such as
+machine learning algorithms, receive laboratory reports electronically to predict diseases
+or disease progression [1]. Other programs will evaluate previous results to inform on
+retest intervals and to prevent unnecessary testing [2].
+Because laboratory reports will be readily available, they will be used in other contexts
+besides immediate patient treatment. For hospital management and resource allocation,
+laboratory results already enter dedicated scores [3]. Laboratory data is also analysed in
+large health care research projects [4]. The COVID pandemic provides examples where test
+results are aggregated to inﬂuence public health decisions. Patients see themselves in a
+more active role and request their laboratory reports to manage their lifestyle and health.
+Diagnostics 2021, 11, 1487. https://doi.org/10.3390/diagnostics11081487
+https://www.mdpi.com/journal/diagnostics
+Diagnostics 2021, 11, 1487
+2 of 8
+This work examines how laboratories and laboratory medicine can prepare for these
+changes on a technical, content, and organizational level.
+2. Materials and Methods
+A comprehensive literature review was conducted.
+3. Results
+3.1. International Terminologies Allow Machine-Readable, Unambiguous Designation of
+Laboratory Analyses
+Technically, laboratory reports must be transferable, machine-readable, a
+
+====================================================================================================
+FILE: C07_Yeh_2021_LOINC_Microbiology_Taiwan.pdf
+====================================================================================================
+ 
+ 
+ 
+ 
+Diagnostics 2021, 11, 1564. https://doi.org/10.3390/diagnostics11091564 
+www.mdpi.com/journal/diagnostics 
+Article 
+Logical Observation Identifiers Names and Codes (LOINC®) 
+Applied to Microbiology: A National Laboratory Mapping 
+Experience in Taiwan 
+Chih-Yang Yeh 1, Syu-Jyun Peng 2, Hsuan Chia Yang 1,3,4, Mohaimenul Islam 1,3,4, Tahmina Nasrin Poly 1,3,4, 
+Chien-Yeh Hsu 5,6, Stanley M. Huff 7,8, Huan-Chieh Chen 9,10,† and Ming-Chin Lin 1,2,10,11,*,† 
+1 Graduate Institute of Biomedical Informatics, College of Medicine Science and Technology, 
+Taipei Medical University, Taipei 11031, Taiwan; d610104001@tmu.edu.tw (C.-Y.Y.); 
+lovejog@tmu.edu.tw (H.C.Y.); d610106004@tmu.edu.tw (M.I.); d610108004@tmu.edu.tw (T.N.P.) 
+2 Professional Master Program in Artificial Intelligence in Medicine, College of Medicine, 
+Taipei Medical University, Taipei 11031, Taiwan; sjpeng2019@tmu.edu.tw 
+3 International Center for Health Information Technology (ICHIT), Taipei Medical University, 
+Taipei 11031, Taiwan 
+4 Research Center of Big Data and Meta-Analysis, Wan Fang Hospital, Taipei Medical University, 
+Taipei 116, Taiwan 
+5 Department of Information Management, National Taipei University of Nursing and Health Science, 
+Taipei 11219, Taiwan; cyhsu@ntunhs.edu.tw 
+6 Master Program in Global Health and Development, Taipei Medical University, Taipei 11031, Taiwan 
+7 Department of Biomedical Informatics, School of Medicine, University of Utah, 
+Salt Lake City, UT 84132, USA; stan.huff@imail.org 
+8 Department of Biomedical Informatics, Intermountain Healthcare, Murray, UT 84107, USA 
+9 Department of Neurosurgery, Taipei Medical University-Wan Fang Hospital, Taipei 116, Taiwan; 
+dissector@gmail.com 
+10 Taipei Neuroscience Institute, Taipei Medical University, Taipei 11031, Taiwan 
+11 Department of Neurosurgery, Shuang Ho Hospital, Taipei Medical University, 
+New Taipei City 23561, Taiwan 
+* Correspondence: arbiter@tmu.edu.tw 
+† These authors contributed equally to this work. 
+Abstract: Background and Objective: Logical Observation Identifiers Names and Codes (LOINC) is 
+a universal standard for identifying laboratory tests and clinical observations. It facilitates a smooth 
+information exchange between hospitals, locally and internationally. Although it offers immense 
+benefits for patient care, LOINC coding is complex, resource-intensive, and requires substantial do-
+main expertise. Our objective was to provide training and evaluate the performance of LOINC map-
+ping of 20 pathogens from 53 hospitals participating in the National Notifiable Disease Surveillance 
+System (NNDSS). Methods: Complete mapping codes for 20 pathogens (nine bacteria and 11 vi-
+ruses) were requested from all participating hospitals to review between January 2014 and Decem-
+ber 2016. Participating hospitals mapped those pathogens to LOINC terminology, utilizing the Re-
+genstrief LOINC mapping assistant (RELMA) and reported to the NNDSS, beginning in January 
+2014. The mapping problems were identified by expert panels that classified frequently asked ques-
+tionnaires (FAQs) into seven LOINC categories. Finally, proper and meaningful suggestions were 
+provided based on the error pattern in the FAQs. A general meeting was organized if the error 
+pattern proved to be difficult to resolve. If the experts did not conclude the local issue’s error pat-
+tern, a request was sent to the LOINC committee for resolution. Results: A total of 53 hospitals 
+participated in our study. Of these, 26 (49.05%) used homegrown and 27 (50.95%) used outsourced 
+LOINC mapping. Hospitals who participated in 2015 had a greater improvement in LOINC map-
+ping than those of 2016 (26.5% vs. 3.9%). Most FAQs were related to notification principles (47%), 
+LOINC system (42%), and LOINC property (26%) in 2014, 2015, and 2016, respectively. Conclusions: 
+The findings of our study show that multiple stage approaches improved LOINC mapping by up 
+to 26.5%. 
+Citation: Yeh, C.-Y.; Peng, S.-J.; 
+Yang, H.C.; Islam, M.; Poly, T.N.; 
+Hsu, C.-Y.; Huff, S.M.; Chen, H.-C.; 
+Lin, M.-C. Logical Observation 
+Identifiers Names and Codes 
+(LOINC) Applied to Microbiology: 
+A National Laboratory Mapping 
+Experience in Taiwan. Diagnostics 
+2021, 11, 1564. https://doi.org/ 
+10.3390/diagnostics11091564 
+Academic Editor: Ayman El-Baz 
+Received: 24 May 2021 
+Accepted: 26 August 2021 
+Published: 28 August 2021 
+Publisher’s Note: MDPI stays neu-
+tral with regard to jurisdictional 
+claims in published maps and institu-
+tional affiliations. 
+ 
+Copyright: © 2021 by the authors. Li-
+censee MDPI, Basel, Switzerland. 
+This article is an open access article 
+distributed under the terms and con-
+ditions of the Creative Commons At-
+tribution (CC BY) license (http://crea-
+tivecommons.org/licenses/by/4.0/). 
+Diagnostics 2021, 11, 1564 
+2 of 18 
+ 
+ 
+Keywords: LOINC laboratory test; RELMA; automated mapping; electronic health record 
+ 
+1. Introduction 
+Logical Observation Identifiers Names and Codes (LOINC®) is the global stan
+
+====================================================================================================
+FILE: C08_Pfaff_2023_Coding_LongCOVID_ICD10.pdf
+====================================================================================================
+Pfaff et al. BMC Medicine (2023) 21:58 
+https://doi.org/10.1186/s12916-023-02737-6
+RESEARCH ARTICLE
+Coding long COVID: characterizing a new 
+disease through an ICD‑10 lens
+Emily R. Pfaff1*†   , Charisse Madlock‑Brown2†, John M. Baratta1, Abhishek Bhatia1, Hannah Davis3, 
+Andrew Girvin4, Elaine Hill5, Elizabeth Kelly1, Kristin Kostka6, Johanna Loomba7, Julie A. McMurry8, 
+Rachel Wong9, Tellen D. Bennett8, Richard Moffitt9, Christopher G. Chute10, Melissa Haendel8, The N3C 
+Consortium, The RECOVER Consortium 
+© The Author(s) 2023. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/. The Creative Commons Public Domain Dedication waiver (http://​creat​iveco​
+mmons.​org/​publi​cdoma​in/​zero/1.​0/) applies to the data made available in this article, unless otherwise stated in a credit line to the data.
+Open Access
+BMC Medicine
+Abstract 
+Background  Naming a newly discovered disease is a difficult process; in the context of the COVID-19 pandemic 
+and the existence of post-acute sequelae of SARS-CoV-2 infection (PASC), which includes long COVID, it has proven 
+especially challenging. Disease definitions and assignment of a diagnosis code are often asynchronous and iterative. 
+The clinical definition and our understanding of the underlying mechanisms of long COVID are still in flux, and the 
+deployment of an ICD-10-CM code for long COVID in the USA took nearly 2 years after patients had begun to describe 
+their condition. Here, we leverage the largest publicly available HIPAA-limited dataset about patients with COVID-19 in 
+the US to examine the heterogeneity of adoption and use of U09.9, the ICD-10-CM code for “Post COVID-19 condition, 
+unspecified.”
+Methods  We undertook a number of analyses to characterize the N3C population with a U09.9 diagnosis code 
+(n = 33,782), including assessing person-level demographics and a number of area-level social determinants of health; 
+diagnoses commonly co-occurring with U09.9, clustered using the Louvain algorithm; and quantifying medications 
+and procedures recorded within 60 days of U09.9 diagnosis. We stratified all analyses by age group in order to discern 
+differing patterns of care across the lifespan.
+Results  We established the diagnoses most commonly co-occurring with U09.9 and algorithmically clustered them 
+into four major categories: cardiopulmonary, neurological, gastrointestinal, and comorbid conditions. Importantly, we 
+discovered that the population of patients diagnosed with U09.9 is demographically skewed toward female, White, 
+non-Hispanic individuals, as well as individuals living in areas with low poverty and low unemployment. Our results 
+also include a characterization of common procedures and medications associated with U09.9-coded patients.
+Conclusions  This work offers insight into potential subtypes and current practice patterns around long COVID and 
+speaks to the existence of disparities in the diagnosis of patients with long COVID. This latter finding in particular 
+requires further research and urgent remediation.
+Keywords  Long COVID, Electronic health records, Health disparities
+†Emily R. Pfaff and Charisse Madlock-Brown are co-first authors.
+*Correspondence:
+Emily R. Pfaff
+epfaff@email.unc.edu
+Full list of author information is available at the end of the article
+Page 2 of 13
+Pfaff et al. BMC Medicine (2023) 21:58 
+Background
+Naming diseases is an ever-present challenge, and there 
+is no shortage of efforts that aim to better standardize, 
+disambiguate, and keep track of disease nomenclature 
+and definitions [1–4]. Disease naming has long been 
+controversial–for example, there are more than 400 
+names for syphilis dating back to the fifteenth century 
+[5]. Naming a disease requires defining it, and assigning 
+a standard code to the disease facilitates research, care, 
+and patient engagement due to the ease of patient clas-
+sification and knowledge exchange. However, naming 
+and coding a disease does not mean the disease did not 
+exist prior to its naming or coding. For instance, although 
+“SARS-CoV-2” and “COVID-19” were both coined on 
+February 11, 2020, by the International Committee on 
+the Taxonomy of Viruses and the World Health Organi-
+zati
+
+====================================================================================================
+FILE: D01_Heryawan_2025_FHIR_Interoperability_Indonesia.pdf
+====================================================================================================
+Fast Healthcare Interoperability Resources (FHIR)-Based
+Interoperability Design in Indonesia: Content Analysis of
+Developer Hub's Social Networking Service
+Lukman Heryawan
+Yukiko Mori
+Goshiro Yamamoto
+Naoto Kume
+Lutfan Lazuardi
+Anis Fuad
+Tomohiro KurodaLukman Heryawan, PhD, Department of Computer Science and Electronics, Faculty of
+Mathematics and Natural Sciences, Universitas Gadjah Mada, Sekip utara BLS 21, Sleman, 55281, Indonesia, 62
+81228944870; lukmanh@ugm.ac.id
+2025
+Abstract
+Background
+Interoperability in health care is a critical aspect for the exchange of health information. The Fast Healthcare
+Interoperability Resources (FHIR) framework has become widely adopted to provide interoperable data exchange in
+the health care industry. The COVID-19 pandemic has demonstrated the significance of interoperable data in
+tracking patients who have contracted the virus and keeping track of the vaccinated population. Indonesia is one of
+the many countries that have implemented interoperable data systems to track patients with COVID-19, and it has
+aspirations to expand the system to other use cases, particularly in the primary health care setting. The primary
+health care providers in Indonesia include Puskesmas (community health centers) and private clinics.
+Objective
+To promote interoperable health data exchange in the primary health care sector, the Indonesian government has
+launched the Satusehat project. The goal of the Satusehat platform is to make health data in Indonesia interoperable
+and exchangeable between health care organizations, particularly Puskesmas and private clinics.
+Methods
+For a successful implementation of the Satusehat platform in Puskesmas and private clinics, it is crucial to
+understand the challenges that may arise. This study analyzed the pain points of the Satusehat platform based on a
+content analysis of the Satusehat Social Networking Service Telegram group messages. The study revealed the pain
+points and suggested existing approaches to address them, which can be used as a proposed design of
+interoperability for Puskesmas and private clinics, making it easier for these organizations to adopt the Satusehat
+platform.
+Results
+The pain points identified in this study include issues with the FHIR server, problems with FHIR profile selection,
+and the mapping of electronic medical record data into standardized data, such as mapping into the Systematized
+Nomenclature of Medicine Clinical Terminology. The results show that the value of the mapping issue is 37, profile
+issue 9, and server issue 61. Among the 3 categories, server issues had the highest population, followed by mapping
+issues and then profile issues. To address these issues, the study proposed practical approaches, including a
+federated architecture for the FHIR server instead of a centralized architecture, an FHIR writer and FHIR viewer
+system inspired by the Standardized Structured Medical Record Information eXchange system in Japan, and an
+FHIR conversion framework that integrates with our FHIR writer and FHIR viewer system.
+Conclusions
+These proposed solutions can help resolve the pain points identified in the study and help the advancement of the
+Satusehat platform implementation in Puskesmas and private clinics in Indonesia. We believed that the proposed
+solutions have potential to be adopted to other countries with similar issues when conducting nationwide project in
+health care interoperability design.
+Introduction
+Background
+Health information exchange (HIE) involves the transfer of electronic health data between different health
+information systems, including the electronic medical record (EMR) system, the electronic health record (EHR)
+system, and the personal health record (PHR) system. Notably, when the data are controlled by a health facility, an
+EMR system transitions into an EHR system. Conversely, if the data are managed by the patient or consumer
+themselves, it transforms into a PHR system [1]. To facilitate this exchange, HIE requires a data exchange or data
+interoperability framework that provides a standardized format for transferring health data [2]. One of the
+organizations that provides such interoperability frameworks is Health Level Seven (HL7) [3]. HL7 is a nonprofit
+organization that develops interoperability frameworks, such as HL7 FHIR (Fast Healthcare Interoperability
+Resources). It is a newer standard that provides a modern and flexible approach to exchanging health information.
+It uses a Representational State Transfer web services approach and supports both structured and unstructured
+data [4]. There have been several studies and reports on the implementation of EHR systems using the FHIR
+standard in different countries. One study, focused on the implementation of an FHIR-based EHR in Japan,
+highlighted some of the challenges faced during the implementation process, including lack of standardization and
+compatibility between different systems, difficulty of data migration, and the need for impro
+
+====================================================================================================
+FILE: D02_Faisal_2024_SATUSEHAT_EMT_FHIR.pdf
+====================================================================================================
+Original Paper
+Implementation of the World Health Organization Minimum
+Dataset for Emergency Medical Teams to Create Disaster
+Profiles for the Indonesian SATUSEHAT Platform Using
+Fast Healthcare Interoperability Resources: Development and
+Validation Study
+Hiro Putra Faisal1,2, MD; Masaharu Nakayama1, MD, PhD
+1Department of Medical Informatics, Tohoku University Graduate School of Medicine, Sendai, Japan
+2Department of Physiology, Faculty of Medicine, UIN Syarif Hidayatullah Jakarta, Tangerang Selatan, Indonesia
+Corresponding Author:
+Masaharu Nakayama, MD, PhD
+Department of Medical Informatics
+Tohoku University Graduate School of Medicine
+2-1 Seiryo-machi, Aoba-ku
+Sendai, 980-8574
+Japan
+Phone: 81 22-717-7572
+Fax: 81 22-717-7505
+Email: m.nakayama@tohoku.ac.jp
+Abstract
+Background: The National Disaster Management Agency (Badan Nasional Penanggulangan Bencana) handles disaster
+management in Indonesia as a health cluster by collecting, storing, and reporting information on the state of survivors and their
+health from various sources during disasters. Data were collected on paper and transferred to Microsoft Excel spreadsheets.
+These activities are challenging because there are no standards for data collection. The World Health Organization (WHO)
+introduced a standard for health data collection during disasters for emergency medical teams (EMTs) in the form of a
+minimum dataset (MDS). Meanwhile, the Ministry of Health of Indonesia launched the SATUSEHAT platform to integrate all
+electronic medical records in Indonesia based on Fast Healthcare Interoperability Resources (FHIR).
+Objective: This study aims to implement the WHO EMT MDS to create a disaster profile for the SATUSEHAT platform
+using FHIR.
+Methods: We extracted variables from 2 EMT MDS medical records—the WHO and Association of Southeast Asian Nations
+(ASEAN) versions—and the daily reporting form. We then performed a mapping process to match these variables with the
+FHIR resources and analyzed the gaps between the variables and base resources. Next, we conducted profiling to see if there
+were any changes in the selected resources and created extensions to fill the gap using the Forge application. Subsequently, the
+profile was implemented using an open-source FHIR server.
+Results: The total numbers of variables extracted from the WHO EMT MDS, ASEAN EMT MDS, and daily reporting forms
+were 30, 32, and 46, with the percentage of variables matching FHIR resources being 100% (30/30), 97% (31/32), and 85%
+(39/46), respectively. From the 40 resources available in the FHIR ID core, we used 10, 14, and 9 for the WHO EMT MDS,
+ASEAN EMT MDS, and daily reporting form, respectively. Based on the gap analysis, we found 4 variables in the daily
+reporting form that were not covered by the resources. Thus, we created extensions to address this gap.
+Conclusions: We successfully created a disaster profile that can be used as a disaster case for the SATUSEHAT platform.
+This profile may standardize health data collection during disasters.
+JMIR Med Inform 2024;12:e59651; doi: 10.2196/59651
+JMIR MEDICAL INFORMATICS
+Faisal & Nakayama
+https://medinform.jmir.org/2024/1/e59651
+JMIR Med Inform 2024 | vol. 12 | e59651 | p. 1
+(page number not for citation purposes)
+Keywords: WHO EMT MDS; FHIR; SATUSEHAT; disaster; implementation; development; validation; emergency medical
+team; disaster management; Indonesia; Fast Healthcare Interoperability Resources; resources; interoperability; electronic
+medical records; EMR; reporting; disaster profile; health data; health data collection; World Health Organization; EMT; WHO;
+MDS; minimum dataset
+Introduction
+In Indonesia, disaster management is conducted by the
+National Disaster Management Agency (Badan Nasional
+Penanggulangan Bencana) [1]. Specifically, health issues
+during disasters are mandated to health clusters, whose
+members consist of regional health services, rapid health
+assessment teams, and emergency medical teams (EMTs)
+from various institutions. The health cluster collects, records,
+and reports information on survivors and their health
+conditions during a disaster [2]. According to the World
+Health Organization (WHO), collecting patient data requires
+the use of a nationally accepted reporting form or an approved
+dataset that is reported periodically. This report must include
+copies for the patient [3]. The current standard form available
+in Indonesia is the Rapid Health Assessment Form established
+by the Ministry of Health (MoH). This form summarized
+only the number of survivors and their general situation
+[2]. Meanwhile, the EMTs from various institutions recor-
+ded the survivors’ health status using their forms [4]. This
+information was collected by Badan Nasional Penanggulan-
+gan Bencana during daily reporting meetings and transfer-
+red to Microsoft Excel spreadsheets [5]. This activity is
+time-consuming and often inaccurate [6]. Additionally, the
+lack of coordination due to the decreased number of officers
+affected by the disast
+
+====================================================================================================
+FILE: D03_Faisal_2026_FHIR_Disaster_Dashboard_Indonesia.pdf
+====================================================================================================
+Standardizing Disaster Health Data Visualization Using
+Fast Healthcare Interoperability Resources in Indonesia:
+Dashboard Development and Technical Evaluation
+2026-10-02
+Abstract
+Background
+Health data management during disasters enables responders to assess the needs of survivors, efficiently allocate
+resources, and monitor survivors’ health conditions. However, government agencies need to interpret health data in
+real time during disasters because the volume and complexity of such data can hinder timely decision-making.
+Objective
+In this study, we aimed to develop a visual interface for Fast Healthcare Interoperability Resources (FHIR)–based
+data from various sources, using the daily report form of the World Health Organization (WHO) Emergency Medical
+Teams Minimum Data Set (EMT MDS) as a template and ensuring compliance with the SATUSEHAT platform.
+Methods
+The proposed solution involves creating a dashboard application within a web-based system to visualize health data
+using FHIR, leveraging the WHO EMT MDS disaster profile. The interface includes Overview, Location, and
+Demography pages that display information in tables, graphs, and maps. This application was developed using
+JavaScript and React. The dataset consisted of 13,300 synthetic patient records generated using Synthea,
+subsequently modified with GPT-5, and stored on the Health Level 7 (HL7) Application Programming Interface
+(HAPI) FHIR server.
+Results
+We developed a dashboard application based on the WHO EMT MDS Daily Reporting Form comprising 3 main
+pages: Overview, Demography, and Location. The Demography page contains several sections, including the total
+number of patients, health conditions, outcomes, relationships, and protection. The Location page lists all health
+care facilities, along with their corresponding locations, on a map. Each Location page displays detailed information
+regarding the organization and demographics of the respective location.
+Conclusions
+The dashboard application demonstrates that health data collected in accordance with FHIR standards can be
+integrated and presented in a form suitable for disaster response. This dashboard has the potential to support
+disaster management agencies by enabling real-time, data-driven decision-making during disaster response.
+Received 2026 Apr 19; Revised 2026 Sep 13; Accepted 2026 Sep 15; Collection date 2026.
+Introduction
+Indonesia is among the most disaster-prone countries due to its geographical, geological, and climatological
+conditions [1,2]. The consequences of these risks were evident in several disasters in recent years, including
+earthquakes, volcanic eruptions, and, more recently, floods and landslides in Sumatra in late 2025 that displaced
+more than 390,000 people across 3 provinces [3]. Such large-scale, recurring events underscore the critical need for
+robust health information systems to support timely, coordinated disaster response.
+Frontline health services during disasters are delivered primarily through Puskesmas (community health centers),
+which operate at the subdistrict level and serve as the first point of contact for affected populations [4,5]. Each
+Puskesmas typically covers a catchment area of approximately 30,000 residents [6], making it a key operational
+unit for aggregating information and achieving rapid situational awareness during disasters. However, disaster
+response often involves multiple agencies and teams, and health data are frequently fragmented across different
+reporting channels, limiting operational decision-making and coordination [7-9].
+To address data fragmentation and improve coordination, the World Health Organization (WHO) introduced the
+Emergency Medical Teams Minimum Data Set (EMT MDS) in 2017 as a standardized framework for systematic data
+collection and reporting during emergencies [10]. In parallel, Indonesia has initiated nationwide health data
+interoperability through the Ministry of Health (MoH) SATUSEHAT platform, which adopts Fast Healthcare
+Interoperability Resources (FHIR) as the technical standard for exchanging health data among electronic medical
+record systems [11,12]. These developments provide an opportunity to harmonize disaster health reporting with
+interoperable data infrastructures.
+Our previous work proposed a FHIR-based profile to represent key elements of WHO disaster reporting and to
+facilitate interoperability in disaster contexts [13]. In this study, we aimed to develop a web-based dashboard that
+aggregates FHIR data and visualizes WHO EMT MDS–structured disaster response data to support timely
+situational awareness and coordination among responders and coordinating authorities, aligned with Indonesia’s
+FHIR-based data exchange approach.
+Methods
+Profile
+We used the EMT MDS disaster profile mapped to the FHIR standard [13]. The profile contains an extension
+applied to the FHIR “Condition” resource to capture the relationship between a survivor’s health condition and the
+disaster event (directly related, indir
+
+====================================================================================================
+FILE: D04_Hossain_2025_EMR_Implementation_Indonesia.pdf
+====================================================================================================
+Hossain et al. BMC Health Services Research (2025) 25:249 
+https://doi.org/10.1186/s12913-025-12399-0
+RESEARCH
+Open Access
+© The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+BMC Health Services Research
+An exploratory study of electronic medical 
+record implementation and recordkeeping 
+culture: the case of hospitals in Indonesia
+Md. Khalid Hossain1*, Juliana Sutanto1, Putu Wuri Handayani2, Anasthasia Agnes Haryanto1, 
+Joy Bhowmik1,3 and Viviane Frings‑Hessami1 
+Abstract 
+Background  The digitization of healthcare, through electronic medical records (EMRs), is recognized globally 
+as a transformative initiative. Indonesia mandated all healthcare facilities to adopt EMRs by December 31, 2023. How‑
+ever, this transition is complicated by diverse technological, cultural, and infrastructural challenges, with little research 
+addressing the recordkeeping culture’s impact on EMR adoption. This study investigates the electronic recordkeeping 
+culture in Indonesian hospitals following a government mandate to adopt Electronic Medical Records (EMRs). It aims 
+to understand the readiness and challenges in implementing EMRs across hospitals on Java and Sulawesi islands, 
+focusing on infrastructure, staff digital skills, and varied adoption approaches.
+Methods  A qualitative case study approach was utilized, involving focus groups and semi-structured interviews 
+with 150 staff from 12 hospitals. Conducted between November 2023 and June 2024, the study applied thematic 
+analysis based on Oliver and Foscarini’s (2020) recordkeeping culture framework to explore organizational readiness, 
+technological infrastructure, and healthcare professionals’ skills in managing electronic records.
+Results  The findings reveal significant differences in EMR adoption between the islands. Hospitals on Java exhibited 
+proactive engagement, supported by better technological infrastructure and staff training programs, while Sulawesi 
+hospitals adopted EMRs primarily to meet regulatory requirements. Challenges included inconsistent internet con‑
+nectivity, low digital literacy among staff, and ongoing reliance on paper records during the transition. Some Java 
+hospitals have begun fostering a culture conducive to electronic recordkeeping by focusing on developing staff skills 
+in EMR management.
+Conclusions  The effectiveness of EMR adoption in Indonesia relies on addressing technological infrastructure issues 
+and enhancing staff digital literacy. While progress has been made, particularly in more developed regions, a cohesive 
+national strategy emphasizing technological support and targeted training is essential to fully realize the benefits 
+of EMRs in improving healthcare and recordkeeping standards across Indonesia.
+Keywords  Electronic medical record, Recordkeeping culture, Indonesia, Hospitals, Regulation, Information
+*Correspondence:
+Md. Khalid Hossain
+md.khalid.hossain@monash.edu
+Full list of author information is available at the end of the article
+Introduction
+The digitization of healthcare systems is increasingly 
+becoming a global priority, with electronic medical 
+records (EMRs) playing a pivotal role in this transfor-
+mation [1, 2]. EMRs play a critical role in healthcare by 
+providing a holistic view of a patient’s health, thereby 
+Page 2 of 20
+Hossain et al. BMC Health Services Research (2025) 25:249 
+enabling clinicians to make informed decisions with 
+confidence and to share information effectively across 
+patient care teams [3]. The adoption of EMRs in medi-
+cal practice has notably increased in recent years, offer-
+ing several advantages such as rapid and remote access to 
+patient data [4], improved administrative efficiency [5], 
+enhanced legibility and accuracy of data [6], and a reduc-
+tion in medical errors [7]. EMR represents a comprehen-
+sive system rather than just a standalone tool, serving as 
+a critical asset in managing patients’ medical histories. 
+It encompasses an array of computerized clinical infor-
+mation systems designed to capture, store, and present 
+patients’ data [5, 8]. The multifaceted nature of EMR 
+encompasses a clinical data repository, clinical decision 
+support, controlled medical 
+
+====================================================================================================
+FILE: D05_Sukarmayasa_2024_Kesiapan_ePuskesmas_SATUSEHAT_Denpasar.pdf
+====================================================================================================
+Jurnal Kesehatan Vokasional, Vol. 9 No. 4 (November 2024), 301-315 
+ISSN 2541‑0644 (print), ISSN 2599‑3275 (online) 
+DOI https://doi.org/10.22146/jkesvo.99335 
+ 
+ Corresponding author: Sukarmayasa06@gmail.com 
+Diajukan 22 Agustus 2024 Diperbaiki 03 Oktober 2024 Diterima 18 November 2024 
+ 
+https://jurnal.ugm.ac.id/jkesvo 
+Published online November 30, 2024 
+Copyright © 2024 THE AUTHOR(S). This article distributed under a 
+Creative Commons Attribution‑ShareAlike 4.0 International license. 
+https://creativecommons.org/licenses/by-sa/4.0/ 
+ 
+Kesiapan Integrasi e-Puskesmas dengan SATUSEHAT di Puskesmas 
+Kota Denpasar 
+ 
+ 
+Readiness for the Integration of e-Puskesmas with SATUSEHAT at Public Health 
+Centers in Denpasar City 
+ 
+I Made Sukarmayasa1 ,Putu Ika Farmani1, Made Karma Maha Wirajaya1, 
+Putu Ayu Laksmini1 
+1Program Studi Manajemen Informasi Kesehatan, Fakultas Ilmu-Ilmu Kesehatan, 
+Universitas Bali Internasional, Indonesia 
+ 
+ABSTRAK 
+Latar Belakang: Kesiapan Puskesmas di Kota Denpasar sangat diperlukan dalam mengintergrasikan e-
+Puskesmas dengan SATUSEHAT. Kesiapan ini diukur dengan melihat individu atau organisasi untuk 
+menerima dan memanfaatkan teknologi di Puskesmas. Pada penelitian sebelumnya, banyak fasilitas 
+kesehatan di Indonesia termasuk puskesmas yang menghadapi berbagai tantangan dalam mengadopsi 
+teknologi, seperti kurangnya pelatihan SDM. 
+Tujuan: Penelitian ini bertujuan untuk menggambarkan kesiapan integrasi e-Puskesmas dan 
+SATUSEHAT di Puskesmas Kota Denpasar dengan metode TRI. 
+Metode: Penelitian ini menggunakan deskriptif kuantitatif dengan desain Cross-Sectional dan 
+responden 108 pegawai 11 Puskesmas Kota Denpasar yang terlibat dalam integrasi. Variabel yang 
+diteliti adalah Optimism, Innovativeness, Discomfort, dan Insecurity, menggunakan kuesioner skala Likert 
+1-5. Data dianalisis dengan skor TRI dalam 3 kategori dan disajikan dalam tabel. 
+Hasil: Kesiapan integrasi e-Puskesmas dengan SATUSEHAT di 11 Puskesmas Kota Denpasar dinilai 
+melalui empat komponen: Optimism (1,11), Innovativeness (0,79), Discomfort (0,59), dan Insecurity (0,88), 
+dengan nilai total TRI sebesar 3,37. 
+Kesimpulan: Kesiapan integrasi e-Puskesmas dengan SATUSEHAT di 11 Puskesmas Kota Denpasar 
+didapatkan jumlah nilai TRI sebesar 3,37 yang artinya pegawai di Puskesmas Kota Denpasar memiliki 
+nilai kesiapan yang sedang dalam mengadaptasi sebuah teknologi baru. 
+ 
+Kata Kunci: Technology Readiness Index; Integrasi; e-Puskesmas; SATUSEHAT 
+ABSTRACT 
+Background: The readiness of public health centers in Denpasar City is needed in integrating e-Puskesmas with 
+SATUSEHAT. This readiness is measured by looking at individuals or organizations to accept and utilize 
+technology in public health centers. In previous research, many health facilities in Indonesia including puskesmas 
+face various challenges in adopting technology, such as lack of training for human resources. 
+Objective: This study aims to describe the readiness for the integration of e-Puskesmas and SATUSEHAT at 11 
+public health centers in Denpasar City using the TRI method. 
+Methods: This study uses quantitative descriptive with a Cross-Sectional design and respondents of 108 
+Denpasar City Health Center employees who were involved in integration. The variables studied were Optimism, 
+Innovativeness, Discomfort, and Insecurity, using a Likert scale questionnaire 1-5. Data were analyzed with TRI 
+scores in 3 categories and presented in a table. 
+Results: The readiness of the integration of e-Puskesmas with SATUSEHAT 11 public health center of Denpasar 
+City was assessed through four components: Optimism (1.11), Innovativeness (0.79), Discomfort (0.59), and 
+Insecurity (0.88), with a total TRI value of 3.37. 
+Conclusion: : Readiness for the integration of e-Puskesmas with SATUSEHAT at 11 Denpasar City health center 
+obtained a TRI score of 3.37, which means that employees at the Denpasar City Health Center have a moderate 
+readiness score in adapting new technology. 
+ 
+Keywords: Technology Readiness Index; Integration; e-Puskesmas; SATUSEHAT 
+ 
+ 
+ 
+Kesiapan Integrasi e-Puskesmas… 
+ 
+302 
+ 
+ 
+Jurnal Kesehatan Vokasional, Vol. 9 No. 4, 2024, 301-315 
+https://jurnal.ugm.ac.id/jkesvo Published onlineNovember 30, 2024 
+PENDAHULUAN 
+Peraturan 
+Menteri 
+Kesehatan 
+Republik Indonesia Nomor 43 Tahun 2019 
+menyebutkan Pusat Kesehatan Masyarakat 
+(Puskesmas) adalah sarana pelayanan 
+kesehatan tingkat pertama yang ditujukan 
+untuk individu dan masyarakat dengan 
+prioritas utama pada upaya promosi 
+kesehatan dan pencegahan penyakit guna 
+mencapai kondisi kesehatan masyarakat 
+yang 
+optimal 
+di 
+wilayah 
+tanggung 
+jawabnya (Nggode and M.Ardan, 2024). 
+Puskesmas dapat memperoleh manfaat 
+dari 
+teknologi 
+informasi 
+untuk 
+meningkatkan manajemen data pasien, 
+melacak riwayat kesehatan dari waktu ke 
+waktu dan memberikan layanan medis 
+yang akurat dengan lebih cepat (Junaedi et 
+al., 2024). 
+Sistem 
+Informasi 
+Manajemen 
+Puskesmas adalah aplikasi yang dirancang 
+untuk meng
+
+====================================================================================================
+FILE: D06_Siswati_2024_Tantangan_RME_Puskesmas_Padang.pdf
+====================================================================================================
+Jurnal Kesehatan Vokasional, Vol. 9 No. 1 (Februari 2024), 01‑16 
+ISSN 2541‑0644 (print), ISSN 2599‑3275 (online) 
+DOI https://doi.org/10.22146/jkesvo.92719 
+ 
+ Corresponding author: siswati@ph.unand.ac.id 
+Diajukan 02 Januari 2024 Diperbaiki 30 Januari 2024 Diterima 21 Februari 2024 
+ 
+https://jurnal.ugm.ac.id/jkesvo 
+Published online February 29, 2024 
+Copyright © 2023 THE AUTHOR(S). This article distributed under a 
+Creative Commons Attribution‑ShareAlike 4.0 International license. 
+https://creativecommons.org/licenses/by-sa/4.0/ 
+ 
+Analisis Tantangan Kesiapan Implementasi Rekam Medis Elektronik 
+di Puskesmas Kota Padang 
+ 
+Analysis of Readiness Challenges for Implementing Electronic Medical Records In 
+Padang City’s Health Centers 
+ 
+Sri Siswati1 , Tuty Ernawati 1, Muthia Khairunnisa2 
+1Fakultas Kesehatan Masyarakat, Universitas Andalas, Indonesia 
+2Magister Kesehatan Masyarakat, Fakultas Kedokteran, Universitas Andalas, Indonesia 
+ABSTRAK 
+Latar Belakang: Puskesmas merupakan salah satu fasilitas kesehatan yang wajib melaksanakan Rekam 
+Medis Elektronik (RME) paling lambat 31 Desember 2023 melalui Permenkes Nomor 24 Tahun 2022 
+tentang Rekam Medis. Namun, faktor kesiapan sumber daya manusia menjadi tantangan dalam 
+implementasi. 
+Tujuan: Penelitian ini bertujuan untuk mengetahui faktor dan hambatan yang mempengaruhi kesiapan 
+tenaga kesehatan dalam menerapkan RME di Puskesmas. 
+Metode: Penelitian ini menggunakan mixed-method dengan model sequantial explanatory dilakukan pada 
+Mei sampai Oktober 2023 di 23 Puskesmas Kota Padang. Pengambilan data kuantitatif dengan cross-
+sectional dilakukan pada 69 sampel, yaitu dokter, perekam medis, dan perawat, sedangkan kualitatif 
+dilakukan terhadap 46 informan, yaitu 23 kepala puskesmas dan 23 perekam medis dengan cara 
+purposive sampling. 
+Hasil: Tenaga Kesehatan yang siap menerapkan RME hanya 33 orang (47,8%). Faktor Tingkat 
+pendidikan, pengalaman kerja, pengetahuan, dan persepsi berpengaruh signifikan terhadap kesiapan 
+tenaga kesehatan melaksanakan RME. Temuan wawancara mendalam diketahui penyebab belum siap 
+tenaga kesehatan dalam melaksanakan RME adalah kurangnya pengetahuan tentang RME karena 
+pelatihan RME tidak diberikan ke seluruh tenaga kesehatan selain itu keterampilan penggunaan 
+komputer menjadi hambatan utama. 
+Kesimpulan: Tidak semua tenaga kesehatan siap menerapkan RME karena pelatihan hanya oleh 
+perekam medis sehingga perlu pelatihan serta pendampingan dari dinas kesehatan guna memantau 
+keberhasilan implementasi. 
+ 
+Kata Kunci: Kesiapan; Puskesmas; Rekam Medis Elektronik; Tenaga Kesehatan 
+ 
+ABSTRACT 
+Background: Public Health Center is one of the health facilities that is required to implement Electronic Medical 
+Records (RME) no later than December 31, 2023 through Permenkes Number 24 of 2022 concerning Medical 
+Records. However, the readiness factor of human resources is a challenge in implementation. 
+Objective: This study aims to determine the factors and barriers that affect the readiness of health workers in 
+implementing RME at Public Health Center. 
+Methods: This study used mixed-method with sequential explanatory model conducted from May to October 
+2023 in 23 health centers in Padang City. Quantitative data collection with cross-sectional was conducted on 69 
+samples, namely doctors, medical recorders, and nurses, while qualitative was conducted on 46 informants, namely 
+23 heads of health centers and 23 medical recorders by purposive sampling. 
+Results: Only 33 health workers (47.8%) were ready to implement RME. Level of education, work experience, 
+knowledge, and perception have a significant effect on the readiness of health workers to implement RME. The 
+findings of in-depth interviews revealed that the cause of the unpreparedness of health workers in implementing 
+RME was a lack of knowledge about RME because RME training was not given to all health workers, besides that 
+computer use skills were the main obstacle. 
+Conclusion: Not all health workers are ready to implement RME because the training is only by medical 
+recorders, so training and assistance from the health office are needed to monitor the success of implementation. 
+ 
+Keywords: Readiness; Public Health Center; Electronic Medical records; Health professionals 
+ 
+ 
+ 
+Analisis Tantangan Kesiapan… 
+ 
+2 
+ 
+Jurnal Kesehatan Vokasional, Vol. 9 No. 1, 2024, 01‑16 
+https://jurnal.ugm.ac.id/jkesvo Published online February 29, 2024 
+PENDAHULUAN 
+Perkembangan teknologi dan sistem 
+informasi saat ini berkembang pesat, salah 
+satunya di bidang kesehatan. Seiring 
+dengan kebutuhan akan informasi digital 
+dalam layanan kesehatan atau e-health, 
+Rekam Medis Elektronik (RME) berfungsi 
+sebagai landasan 
+mendasar 
+teknologi 
+informasi kesehatan dalam rangkaian 
+layanan kesehatan (Ahmed et al., 2020). 
+Penerapan RME sebagai strategi pada satu 
+dari enam pilar transformasi kesehatan 
+digital Indonesia akan berfokus pada 
+pengembangan 
+data 
+kesehatan, 
+pengembangan 
+aplikasi 
+layanan 
+
+====================================================================================================
+FILE: D07_Sugiarto_2024_EMR_Policy_Indonesia.pdf
+====================================================================================================
+ 
+ 
+Supporting 
+and 
+Inhibiting 
+Factors 
+in 
+Implementing Electronic Medical Records (EMR) 
+Policy in Indonesia 
+Puput Sugiarto1,2*, Cahya Tri Purnami1, and Sutopo Patria Jati1 
+1Master Program of Public Health, Diponegoro University, Indonesia 
+2Medical Record and Health Information Department, Health Polytechinc Ministry of Health 
+Semarang, Indonesia 
+Abstract. Health service facilities are obliged to provide quality services to patients. The 
+increasingly rapid pace of information technology has influenced digital health services, one of 
+which is through Electronic Medical Record (EMR) services. EMR, can improve the quality of 
+health services for patients. The government issued a policy regarding medical records through 
+the Indonesian Ministry of Health’s Regulation Number 24 of 2022 on Medical Records mandating 
+that all health facilities implement EMR by December 2023. However, health facilities have not 
+fully complied this policy. Based on the monitoring of the SATU SEHAT implementation, only 
+61.42% of health service facilities in Indonesia have adopted EMR due to several obstacles related 
+to human resources, infrastructure, and management elements. This research aims to analyze the 
+supporting and inhibiting factors in the implementation of the EMR policy in health service 
+facilities in Indonesia. The research used a narrative review method by searching for articles using 
+the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guideline, 
+resulting in16 journals that were the required criteria. The analysis of these 16 articles show that, 
+in general, health service facilities in Indonesia are ready to implement EMR. However, the 
+implementation of the EMR policy faces inhibiting factors , such as unprepared IT infrastructure, 
+lack of EMR implementation guidelines, and insufficient human resource training. Supporting 
+factors include policies regulated by the Ministry of Health and government facilitation in 
+implementing EMR. To achieve success in implementing the EMR policy, efforts are needed to 
+improve IT infrastructure, improve the quality of EMR, develop strategies for EMR 
+implementation, and provide continuous government assistance from the to health service facilities. 
+1 
+Introduction 
+The rapid development and advancement of information and communication technology 
+have significantly impacted the demand for quick and accurate information among 
+decision-makers. Information has become a fundamental requirement for organizational 
+management in the decision-making process. Hospitals are organizations that store a lot 
+of data and require proper and accurate data processing to be presented as health 
+information. ospital data is derived from patient records, whichcontain the diagnosis and 
+medical action received by the patient during their hospitalization. Patient data is 
+recorded by the hospital in the form of a medical record. Maintenance of medical records 
+ 
+*Corresponding author: puputsugiartormik@gmail.com 
+BIO Web of Conferences 133, 00038 (2024)
+ICOPH-TCD 2024
+https://doi.org/10.1051/bioconf/202413300038
+© The Authors, published by EDP Sciences. This is an open access article distributed under the terms of the Creative Commons 
+Attribution License 4.0 (https://creativecommons.org/licenses/by/4.0/).
+The 5th ICOPH-TCD 2024
+ 
+ 
+is a series of activities that starts from the patient's admission, through medical treatment, 
+nursing care, patient discharge, and the involvement of other professional caregivers 
+while the patient is in the hospital [1]. 
+With the rapid development of technology, the management of medical records has 
+shifted from paper-based systems to electronic format. Electronic Medical Records (EMR) 
+are being developed in Indonesia to improve healthcare services for patients. The use of 
+EMR is expected to be able to support service activities and service management, as well 
+as to generate information and reports tailored to specific needs. EMR can benefit patient 
+services, covering both clinical and administrative functions. The information generated 
+from EMR is also useful for education, regulatory preparation, research, health 
+management, and health promotion [2]. 
+ 
+Implementing EMR in Indonesia still faces various problems, including the difficulty 
+of health personnel accessing health data by health personnel easily, continuously, and 
+in real-time; lack of standardization and integration of health data, making it difficult to 
+interoperability in the implementation of the continuum of care principles; and the 
+failure to achieve completeness, consistency, and accuracy of medical data to meet the 
+needs for evidence-based policy development. Health data recording is inefficient and 
+ineffective due to the overwhelming number of administrative application [3]. To address 
+these problems, the government has issued the Indonesian health transformation policy, 
+outlined in the Strategic Plan of the Ministry of Health 2020-2024
+
+====================================================================================================
+FILE: D08_Aisyah_2025_HIS_Utilization_Puskesmas_Indonesia.pdf
+====================================================================================================
+Original Paper
+Understanding Health Information Systems Utilization Across
+Public Health Centers in Indonesia: Cross-Sectional Study
+Dewi Nur Aisyah1,2,3, PhD; Agus Heri Setiawan2, MPH; Chyntia Aryanti Mayadewi2, MSc; Alfiano Fawwaz
+Lokopessy2, BSc; Zisis Kozlakidis4, PhD; Logan Manikam1,5, PhD
+1Department of Epidemiology and Public Health, Institue of Epidemiology and Health Care, University College London, London, United Kingdom
+2Digital Transformation Office, Ministry of Health Republic of Indonesia, Jakarta, Indonesia
+3Department of Public Health, Monash University Indonesia, Tangerang, Indonesia
+4International Agency for Research on Cancer World Health Organization, Lyon, France
+5Aceso Global Health Consultants Pte Limited, Singapore, Singapore
+Corresponding Author:
+Logan Manikam, PhD
+Department of Epidemiology and Public Health
+Institue of Epidemiology and Health Care, University College London
+1-19 Torrington Place
+London
+United Kingdom
+Phone: 44 207679200
+Email: logan.manikam.10@ucl.ac.uk
+Abstract
+Background: The primary health care service in Indonesia consists of 10,260 public health centers (Puskesmas), which play
+a major role in providing health care in the community, recording and reporting health data using digital health information
+systems (HIS) or manual reports. The utilization of HIS across Puskesmas is crucial to capture the dynamic evolution of health
+problems and monitor interventions, thus providing effective primary health care services for the community.
+Objective: This paper provides a national-level baseline mapping of HIS utilization in Indonesian Puskesmas. It evaluates the
+number of HIS used, associated challenges, and contextual factors influencing system adoption.
+Methods: A cross-sectional survey was carried out covering all Puskesmas across 34 Indonesian provinces between January
+and February 2022. The questionnaire covered a list of HIS used by Puskesmas, which developed the HIS, and the utilization
+and challenges during HIS implementation. Descriptive statistical analysis and bivariate analysis were applied.
+Results: A total of 2606 (25.5%) public health centers across 34 provinces participated in this study. On average, Puskesmas
+reported using 30 different HIS platforms, with notable variation across provinces and islands. Most systems (n=62,060,
+72.94%) were developed by national ministries, though local governments and third parties also contributed. Despite 91.5%
+of respondents reporting that HIS aligned with their needs and 90% claiming data use for decision-making, many centers
+faced operational barriers: 49% (n=132,300) of systems required excessive data entry, 33% (n=89,100) experienced frequent
+downtime, and 29% (n=78,300) lacked automated analysis features. In terms of the infrastructure supporting HIS implementa-
+tion, 9.45% (n=138) of Puskesmas have no access to the internet, while only 28.9% (n=422) have access to robust and efficient
+internet connections. As for the human resources, the study reveals that each health personnel manages up to six different HIS
+for data reporting tasks, 74.30% (n=1133) of Puskesmas only received training at the initial system’s implementation stage,
+and 80.51% (n=1225) of respondents report the existence of an informal knowledge transfer process among the staff. The
+bivariate analysis shows that Puskesmas with the characteristics of being located in Java island and urban areas possessed
+higher accreditation levels, had more training and knowledge transfer, and had a greater chance to use >30 HIS.
+Conclusions: This descriptive study highlights substantial fragmentation in Indonesia’s HIS environment and reveals critical
+disparities in system infrastructure, usability, and workforce capacity. Recommendations should be tailored to different
+contexts: offline-compatible systems and basic digital literacy training are needed in rural areas, while urban Puskesmas may
+benefit from advanced integration and analytics tools. Future research should address HIS interoperability, impact assessment,
+cost-effectiveness, and qualitative user experience through longitudinal and mixed methods studies to guide Indonesia’s digital
+health transformation.
+JMIR MEDICAL INFORMATICS
+Aisyah et al
+https://medinform.jmir.org/2025/1/e68613
+JMIR Med Inform 2025 | vol. 13 | e68613 | p. 1
+(page number not for citation purposes)
+JMIR Med Inform 2025;13:e68613; doi: 10.2196/68613
+Keywords: public health centers; Puskesmas; health information system; infrastructure; primary health care
+Introduction
+Health information systems (HIS) are defined as a set of
+structures—including data, information, indicators, proce-
+dures, devices, technology, and human resources—that are
+interrelated and managed in an integrated manner; they
+provide information support for the decision-making process,
+health program planning, implementation monitoring, and
+evaluation at every level of health administration [1,2].
+Globally, HIS have been used in primary health care facilities
+to re
